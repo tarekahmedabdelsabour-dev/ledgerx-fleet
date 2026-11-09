@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 06:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "rate_per_day",
+  "km_included_per_day",
+  "extra_km_rate",
+  "out_odometer",
+  "in_odometer",
+  "extra_km",
+  "line_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "rate_per_day",
+   "fieldtype": "Currency",
+   "label": "Rate per Day",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "km_included_per_day",
+   "fieldtype": "Int",
+   "label": "Km Included per Day",
+   "default": 0,
+   "in_list_view": 1,
+   "description": "0 = unlimited"
+  },
+  {
+   "fieldname": "extra_km_rate",
+   "fieldtype": "Currency",
+   "label": "Extra Km Rate"
+  },
+  {
+   "fieldname": "out_odometer",
+   "fieldtype": "Int",
+   "label": "Odometer Out"
+  },
+  {
+   "fieldname": "in_odometer",
+   "fieldtype": "Int",
+   "label": "Odometer In"
+  },
+  {
+   "fieldname": "extra_km",
+   "fieldtype": "Float",
+   "label": "Extra Km",
+   "read_only": 1
+  },
+  {
+   "fieldname": "line_amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "read_only": 1,
+   "in_list_view": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-09 06:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fleet Management",
+ "name": "Rental Vehicle",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "istable": 1,
+ "editable_grid": 1
+}

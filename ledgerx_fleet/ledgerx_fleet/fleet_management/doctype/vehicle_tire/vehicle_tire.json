@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 06:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tire_serial",
+  "status",
+  "column_break_1",
+  "brand",
+  "size",
+  "tire_type",
+  "section_break_1",
+  "vehicle",
+  "position",
+  "mounted_on",
+  "column_break_2",
+  "mount_odometer",
+  "removed_on",
+  "removal_odometer",
+  "section_break_2",
+  "purchase_date",
+  "cost",
+  "column_break_3",
+  "expected_life_km",
+  "km_run",
+  "remaining_km"
+ ],
+ "fields": [
+  {
+   "fieldname": "tire_serial",
+   "fieldtype": "Data",
+   "label": "Tire Serial No",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "In Stock\nMounted\nRetired",
+   "default": "In Stock",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Data",
+   "label": "Brand",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "size",
+   "fieldtype": "Data",
+   "label": "Size"
+  },
+  {
+   "fieldname": "tire_type",
+   "fieldtype": "Select",
+   "label": "Tire Type",
+   "options": "All Season\nSummer\nWinter\nRetread"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Mounting"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "mandatory_depends_on": "eval:doc.status=='Mounted'"
+  },
+  {
+   "fieldname": "position",
+   "fieldtype": "Select",
+   "label": "Position",
+   "in_list_view": 1,
+   "options": "\nFront Left\nFront Right\nRear Left\nRear Right\nSpare\nOther",
+   "mandatory_depends_on": "eval:doc.status=='Mounted'"
+  },
+  {
+   "fieldname": "mounted_on",
+   "fieldtype": "Date",
+   "label": "Mounted On"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mount_odometer",
+   "fieldtype": "Int",
+   "label": "Odometer at Mounting"
+  },
+  {
+   "fieldname": "removed_on",
+   "fieldtype": "Date",
+   "label": "Removed On"
+  },
+  {
+   "fieldname": "removal_odometer",
+   "fieldtype": "Int",
+   "label": "Odometer at Removal"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Life"
+  },
+  {
+   "fieldname": "purchase_date",
+   "fieldtype": "Date",
+   "label": "Purchase Date"
+  },
+  {
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "label": "Cost"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expected_life_km",
+   "fieldtype": "Int",
+   "label": "Expected Life (km)",
+   "default": 60000
+  },
+  {
+   "fieldname": "km_run",
+   "fieldtype": "Int",
+   "label": "Distance Run (km)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remaining_km",
+   "fieldtype": "Int",
+   "label": "Remaining (km)",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-09 06:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fleet Management",
+ "name": "Vehicle Tire",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Operator",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:tire_serial",
+ "title_field": "tire_serial",
+ "search_fields": "tire_serial,vehicle,brand",
+ "icon": "fa fa-circle-o",
+ "track_changes": 1,
+ "allow_import": 1,
+ "show_title_field_in_link": 1
+}
