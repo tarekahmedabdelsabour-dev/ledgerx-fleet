@@ -6,6 +6,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
 
 
 def py_strings(path):
@@ -51,9 +52,12 @@ def collect():
 			found.add(fld["label"])
 		if fld["fieldtype"] == "Select":
 			found |= {o for o in fld["options"].split("\n") if o}
-	for title, _i, items in install._sections():
+	import gen_desk
+
+	for title, _l, _d, items, related in gen_desk.MODULES:
 		found.add(title)
-		found |= {label for label, _t, _k in items}
+		found |= {it[0] for it in items} | {r[0] for r in related}
+	found.add("Related")
 	found |= {"Fleet Management", "Fleet", "Maintenance", "Operations", "Home", "Vehicle Registration"}
 	for name, *_r in install.DEFAULT_DOCUMENT_TYPES:
 		found.add(name)

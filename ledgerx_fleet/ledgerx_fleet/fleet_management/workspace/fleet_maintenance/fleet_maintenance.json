@@ -1,0 +1,66 @@
+{
+ "charts": [],
+ "content": "[{\"id\": \"8a87127e16\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Maintenance</b></span>\", \"col\": 12}}, {\"id\": \"3959cd8c52\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Service Plan\", \"col\": 3}}, {\"id\": \"6859d92a38\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Service Schedule\", \"col\": 3}}, {\"id\": \"33110e9403\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Work Order\", \"col\": 3}}, {\"id\": \"7d418a6abc\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fuel Log\", \"col\": 3}}, {\"id\": \"2eba744a1f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Due\", \"col\": 3}}, {\"id\": \"bbabf9c2b8\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fuel Consumption\", \"col\": 3}}]",
+ "creation": "2026-11-09 12:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 1,
+ "icon": "wrench",
+ "idx": 2,
+ "is_hidden": 0,
+ "label": "Fleet Maintenance",
+ "links": [],
+ "modified": "2026-11-09 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fleet Management",
+ "name": "Fleet Maintenance",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 21.0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Service Plan",
+   "link_to": "Service Plan",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Service Schedule",
+   "link_to": "Service Schedule",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Fleet Work Order",
+   "link_to": "Fleet Work Order",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Fuel Log",
+   "link_to": "Fuel Log",
+   "type": "DocType"
+  },
+  {
+   "label": "Maintenance Due",
+   "link_to": "Maintenance Due",
+   "report_ref_doctype": "Service Schedule",
+   "type": "Report"
+  },
+  {
+   "label": "Fuel Consumption",
+   "link_to": "Fuel Consumption",
+   "report_ref_doctype": "Fuel Log",
+   "type": "Report"
+  }
+ ],
+ "title": "Fleet Maintenance",
+ "type": "Workspace"
+}

@@ -1,0 +1,21 @@
+{
+ "app": "ledgerx_fleet",
+ "creation": "2026-11-09 12:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon": "wrench",
+ "icon_type": "Link",
+ "idx": 1,
+ "label": "Fleet Maintenance",
+ "link_to": "Fleet Maintenance",
+ "link_type": "Workspace Sidebar",
+ "modified": "2026-11-09 12:00:00.000000",
+ "modified_by": "Administrator",
+ "name": "Fleet Maintenance",
+ "owner": "Administrator",
+ "parent_icon": "Fleet Management",
+ "restrict_removal": 0,
+ "roles": [],
+ "standard": 1
+}

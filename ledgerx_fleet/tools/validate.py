@@ -193,7 +193,7 @@ def check_hooks():
 	for m in re.findall(r'"(public/js/[\w\./]+)"', text):
 		if not os.path.isfile(os.path.join(APP, m)):
 			err(f"hooks: {m} missing")
-	for m in re.findall(r"/assets/ledgerx_fleet/([\w\./]+)", text):
+	for m in re.findall(r"/assets/ledgerx_fleet/([\w\./-]+)", text):
 		if not os.path.isfile(os.path.join(APP, "public", m)):
 			err(f"hooks: asset {m} missing")
 

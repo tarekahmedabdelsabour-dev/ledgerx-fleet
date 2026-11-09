@@ -1,10 +1,7 @@
-import json
-
 import frappe
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
 
 MODULE = "Fleet Management"
-WORKSPACE = "Fleet Management"
 
 ROLES = ("Fleet Manager", "Fleet Operator")
 
@@ -83,14 +80,12 @@ def after_install():
 	_run(ensure_roles)
 	_run(ensure_custom_fields)
 	_run(seed_defaults)
-	_run(setup_desk)
 	frappe.clear_cache()
 
 
 def after_migrate():
 	_run(ensure_roles)
 	_run(ensure_custom_fields)
-	_run(setup_desk)
 	frappe.clear_cache()
 
 
@@ -131,116 +126,3 @@ def seed_defaults():
 	company = frappe.defaults.get_global_default("company")
 	if company:
 		frappe.db.set_single_value("Fleet Settings", "company", company)
-
-
-# ---------------------------------------------------------------- desk (workspace, sidebar, tile)
-def _sections():
-	"""(section title, icon, [(label, doctype or report, kind)])"""
-	return [
-		("Vehicles and Drivers", "truck", [
-			("Vehicle", "Vehicle", "DocType"), ("Driver", "Driver", "DocType"),
-			("Fleet Assignment", "Fleet Assignment", "DocType"), ("Vehicle Type", "Vehicle Type", "DocType"),
-			("Fleet Document", "Fleet Document", "DocType"), ("Fleet Document Type", "Fleet Document Type", "DocType"),
-			("Vehicle Tire", "Vehicle Tire", "DocType"),
-		]),
-		("Maintenance", "wrench", [
-			("Service Plan", "Service Plan", "DocType"), ("Service Schedule", "Service Schedule", "DocType"),
-			("Fleet Work Order", "Fleet Work Order", "DocType"), ("Fuel Log", "Fuel Log", "DocType"),
-		]),
-		("Operations", "route", [
-			("Fleet Trip", "Fleet Trip", "DocType"), ("Rental Contract", "Rental Contract", "DocType"),
-			("Traffic Fine", "Traffic Fine", "DocType"), ("Fleet Incident", "Fleet Incident", "DocType"),
-		]),
-		("Tracking", "map-pin", [
-			("GPS Device", "GPS Device", "DocType"), ("Fleet GPS Position", "Fleet GPS Position", "DocType"),
-		]),
-		("Reports", "chart-bar", [
-			("Document Expiry", "Document Expiry", "Report"), ("Maintenance Due", "Maintenance Due", "Report"),
-			("Vehicle Cost Analysis", "Vehicle Cost Analysis", "Report"),
-			("Fuel Consumption", "Fuel Consumption", "Report"), ("Trip Profitability", "Trip Profitability", "Report"),
-		]),
-		("Setup", "settings", [("Fleet Settings", "Fleet Settings", "DocType")]),
-	]
-
-
-def setup_desk():
-	_run(_workspace)
-	_run(_sidebar)
-	_run(_app_icon)
-
-
-def _workspace():
-	import uuid
-
-	shortcuts = [("Vehicle", "DocType"), ("Fleet Trip", "DocType"), ("Fleet Work Order", "DocType"),
-		("Fuel Log", "DocType"), ("Rental Contract", "DocType"), ("Fleet Document", "DocType")]
-	content = [{"id": uuid.uuid4().hex[:10], "type": "header",
-		"data": {"text": '<span class="h4"><b>Fleet Management</b></span>', "col": 12}}]
-	for label, _t in shortcuts:
-		content.append({"id": uuid.uuid4().hex[:10], "type": "shortcut", "data": {"shortcut_name": label, "col": 3}})
-	content.append({"id": uuid.uuid4().hex[:10], "type": "spacer", "data": {"col": 12}})
-	for title, _icon, _items in _sections():
-		content.append({"id": uuid.uuid4().hex[:10], "type": "card", "data": {"card_name": title, "col": 4}})
-
-	doc = frappe.get_doc("Workspace", WORKSPACE) if frappe.db.exists("Workspace", WORKSPACE) \
-		else frappe.new_doc("Workspace")
-	doc.label = WORKSPACE
-	doc.title = WORKSPACE
-	doc.module = MODULE
-	doc.public = 1
-	doc.icon = "truck"
-	doc.is_hidden = 0
-	doc.content = json.dumps(content)
-	doc.set("shortcuts", [])
-	doc.set("links", [])
-	for label, t in shortcuts:
-		doc.append("shortcuts", {"label": label, "type": t, "link_to": label, "doc_view": "List"})
-	for title, _icon, items in _sections():
-		doc.append("links", {"type": "Card Break", "label": title})
-		for label, target, kind in items:
-			row = {"type": "Link", "label": label, "link_type": kind, "link_to": target, "onboard": 0}
-			if kind == "Report":
-				row["is_query_report"] = 1
-			doc.append("links", row)
-	doc.flags.ignore_permissions = True
-	doc.save()
-
-
-def _sidebar():
-	if not frappe.db.exists("DocType", "Workspace Sidebar"):
-		return  # older Frappe: the classic workspace above is enough
-	doc = frappe.get_doc("Workspace Sidebar", WORKSPACE) if frappe.db.exists("Workspace Sidebar", WORKSPACE) \
-		else frappe.new_doc("Workspace Sidebar")
-	doc.title = WORKSPACE
-	doc.header_icon = "truck"
-	doc.app = "ledgerx_fleet"
-	doc.module = MODULE
-	doc.standard = 0
-	doc.set("items", [])
-	doc.append("items", {"type": "Link", "label": "Home", "link_type": "Workspace", "link_to": WORKSPACE,
-		"icon": "house", "child": 0})
-	for title, icon, items in _sections():
-		doc.append("items", {"type": "Section Break", "label": title, "icon": icon, "indent": 1,
-			"collapsible": 1, "keep_closed": 1 if title in ("Tracking", "Setup") else 0})
-		for label, target, kind in items:
-			doc.append("items", {"type": "Link", "label": label, "link_type": kind, "link_to": target, "child": 1})
-	doc.flags.ignore_permissions = True
-	doc.save()
-
-
-def _app_icon():
-	if not frappe.db.exists("DocType", "Desktop Icon"):
-		return
-	label = "Fleet Management"
-	doc = frappe.get_doc("Desktop Icon", label) if frappe.db.exists("Desktop Icon", label) \
-		else frappe.new_doc("Desktop Icon")
-	doc.label = label
-	doc.icon_type = "App"
-	doc.link_type = "External"
-	doc.link = "/desk/fleet-management"
-	doc.logo_url = "/assets/ledgerx_fleet/images/fleet.svg"
-	doc.app = "ledgerx_fleet"
-	doc.standard = 0
-	doc.hidden = 0
-	doc.flags.ignore_permissions = True
-	doc.save()

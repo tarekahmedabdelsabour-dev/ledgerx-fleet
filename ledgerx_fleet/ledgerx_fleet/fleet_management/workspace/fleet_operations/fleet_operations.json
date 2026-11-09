@@ -1,0 +1,60 @@
+{
+ "charts": [],
+ "content": "[{\"id\": \"067e16194c\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Operations</b></span>\", \"col\": 12}}, {\"id\": \"c1f96ef753\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Trip\", \"col\": 3}}, {\"id\": \"739ab8e228\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rental Contract\", \"col\": 3}}, {\"id\": \"1e1e70d689\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Traffic Fine\", \"col\": 3}}, {\"id\": \"ac19247471\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Incident\", \"col\": 3}}, {\"id\": \"d0eb220f07\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trip Profitability\", \"col\": 3}}]",
+ "creation": "2026-11-09 12:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 1,
+ "icon": "route",
+ "idx": 3,
+ "is_hidden": 0,
+ "label": "Fleet Operations",
+ "links": [],
+ "modified": "2026-11-09 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fleet Management",
+ "name": "Fleet Operations",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 22.0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Fleet Trip",
+   "link_to": "Fleet Trip",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Rental Contract",
+   "link_to": "Rental Contract",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Traffic Fine",
+   "link_to": "Traffic Fine",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Fleet Incident",
+   "link_to": "Fleet Incident",
+   "type": "DocType"
+  },
+  {
+   "label": "Trip Profitability",
+   "link_to": "Trip Profitability",
+   "report_ref_doctype": "Fleet Trip",
+   "type": "Report"
+  }
+ ],
+ "title": "Fleet Operations",
+ "type": "Workspace"
+}

@@ -1,0 +1,9 @@
+<!-- LedgerX Fleet module icons for the desk dock (two-tone, same idea as the HRMS sprite). -->
+<svg id="ledgerx-fleet-symbols" aria-hidden="true" style="display: none;" class="icon" xmlns="http://www.w3.org/2000/svg">
+	<style>.lx-l{fill:var(--duotone-light,#cbd5e1);stroke:none}.lx-d{fill:none;stroke:var(--duotone-dark,#475569);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}</style>
+	<symbol id="icon-fleet-soft" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="5" class="lx-l"/><path d="M5 15V9h8v6M13 11h3l3 3v1h-6M7.5 17.5a1.5 1.5 0 100-.01M16.5 17.5a1.5 1.5 0 100-.01" class="lx-d"/></symbol>
+	<symbol id="icon-wrench-soft" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="5" class="lx-l"/><path d="M15 7a3 3 0 00-3.5 4L6.5 16a1.4 1.4 0 002 2l5-5A3 3 0 0017 9l-2 1.5-1-1z" class="lx-d"/></symbol>
+	<symbol id="icon-route-soft" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="5" class="lx-l"/><path d="M8 16.5a1.5 1.5 0 100-.01M16 7.5a1.5 1.5 0 100-.01M9.5 16.5H14a2.2 2.2 0 000-4.4h-4a2.2 2.2 0 010-4.6h4.5" class="lx-d"/></symbol>
+	<symbol id="icon-pin-soft" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="5" class="lx-l"/><path d="M12 18s4.5-3.6 4.5-7.2a4.5 4.5 0 10-9 0C7.5 14.400 12 18 12 18zM12 11.5a1.3 1.3 0 100-.01" class="lx-d"/></symbol>
+	<symbol id="icon-chart-soft" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="5" class="lx-l"/><path d="M7 17V12M12 17V8M17 17v-3" class="lx-d"/></symbol>
+</svg>

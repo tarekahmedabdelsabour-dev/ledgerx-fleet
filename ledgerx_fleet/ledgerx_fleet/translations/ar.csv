@@ -1,6 +1,7 @@
 'To' must be after 'From',يجب أن يكون وقت 'إلى' بعد وقت 'من'
 A cancelled work order cannot be submitted,لا يمكن اعتماد أمر شغل ملغي
 A new token replaces the old one. Devices using the old token will stop working.,المفتاح الجديد يستبدل القديم، والأجهزة التي تستخدم المفتاح القديم ستتوقف عن العمل.
+Account,الحساب
 Accounting,المحاسبة
 Accounting Not Configured,المحاسبة غير مضبوطة
 Active,نشط
@@ -122,6 +123,7 @@ Due Date,تاريخ الاستحقاق
 Due Soon,يستحق قريباً
 Electric,كهربائي
 Electrical,كهرباء
+Employee,الموظف
 Enable Expiry and Service Alerts,تفعيل تنبيهات الانتهاء والصيانة
 End Odometer,عداد النهاية
 End Odometer cannot be lower than Start Odometer,عداد النهاية لا يمكن أن يكون أقل من عداد البداية
@@ -164,9 +166,13 @@ Fleet Document,مستند الأسطول
 Fleet Document Type,نوع مستند الأسطول
 Fleet GPS Position,موقع GPS
 Fleet Incident,حادث
+Fleet Maintenance,صيانة الأسطول
 Fleet Management,إدارة الأسطول
+Fleet Operations,تشغيل الأسطول
+Fleet Reports,تقارير الأسطول
 Fleet Settings,إعدادات الأسطول
 Fleet Status,حالة الأسطول
+Fleet Tracking,تتبع الأسطول
 Fleet Trip,رحلة
 Fleet Work Order,أمر شغل صيانة
 Fleet alerts: {0} items need attention,تنبيهات الأسطول: {0} بنود تحتاج انتباهك
@@ -324,6 +330,7 @@ Rear Left,خلفي أيسر
 Rear Right,خلفي أيمن
 Receipt,الإيصال
 Rejected,مرفوض
+Related,مرتبط
 Remaining (days),المتبقي (أيام)
 Remaining (km),المتبقي (كم)
 Removed On,تاريخ الفك

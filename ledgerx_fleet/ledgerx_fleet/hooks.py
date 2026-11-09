@@ -9,13 +9,16 @@ app_license = "mit"
 
 required_apps = ["erpnext", "hrms"]
 
+# Dock icons (same mechanism as HRMS)
+app_include_icons = ["/assets/ledgerx_fleet/icons/module-icons.svg"]
+
 # Tile on the desk home screen / apps screen
 add_to_apps_screen = [
 	{
 		"name": "ledgerx_fleet",
 		"logo": "/assets/ledgerx_fleet/images/fleet.svg",
 		"title": "Fleet Management",
-		"route": "/desk/fleet-management",
+		"route": "/desk/fleet",
 		"has_permission": "ledgerx_fleet.install.check_app_permission",
 	}
 ]

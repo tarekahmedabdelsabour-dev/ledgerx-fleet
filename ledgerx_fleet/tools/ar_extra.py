@@ -131,4 +131,11 @@ AR_EXTRA = {
 	"{0} is not available:": "{0} غير متاحة:",
 	"{0} schedules created": "تم إنشاء {0} جدول صيانة",
 	"{0} {1} is already assigned in {2}": "{0} {1} مُسلَّم بالفعل في {2}",
+	"Fleet Maintenance": "صيانة الأسطول",
+	"Fleet Operations": "تشغيل الأسطول",
+	"Fleet Reports": "تقارير الأسطول",
+	"Fleet Tracking": "تتبع الأسطول",
+	"Related": "مرتبط",
+	"Employee": "الموظف",
+	"Account": "الحساب",
 }

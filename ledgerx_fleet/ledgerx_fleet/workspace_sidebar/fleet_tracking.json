@@ -1,0 +1,52 @@
+{
+ "app": "ledgerx_fleet",
+ "creation": "2026-11-09 12:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "for_user": "",
+ "header_icon": "map-pin",
+ "idx": 3,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "house",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Home",
+   "link_to": "Fleet Tracking",
+   "link_type": "Workspace",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "satellite-dish",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "GPS Device",
+   "link_to": "GPS Device",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "map-pinned",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Fleet GPS Position",
+   "link_to": "Fleet GPS Position",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-11-09 12:00:00.000000",
+ "modified_by": "Administrator",
+ "name": "Fleet Tracking",
+ "owner": "Administrator",
+ "title": "Fleet Tracking"
+}
