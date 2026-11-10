@@ -76,7 +76,14 @@ def load(company=None, submit=1):
 		raise SystemExit(f"Company '{company}' not found. Pass one of: {names}")
 
 	frappe.flags.in_import = False
-	root_cc = frappe.db.get_value("Cost Center", {"company": company, "is_group": 1, "parent_cost_center": ""}, "name")
+	try:
+		from ledgerx_fleet.install import seed_defaults
+		seed_defaults()  # starter document + vehicle types (skips existing)
+		frappe.db.commit()
+	except Exception as e:
+		rep.fail("Setup", "seed_defaults", e)
+	roots = frappe.get_all("Cost Center", filters={"company": company, "is_group": 1}, order_by="lft asc", limit=1, pluck="name")
+	root_cc = roots[0] if roots else None
 	supplier_group = _first("Supplier Group", {"is_group": 0}, "All Supplier Groups")
 	customer_group = _first("Customer Group", {"is_group": 0}, "All Customer Groups")
 	territory = _first("Territory", {"is_group": 0}, "All Territories")
