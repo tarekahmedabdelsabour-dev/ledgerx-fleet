@@ -1,0 +1,242 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 06:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "company",
+  "cost_center",
+  "column_break_1",
+  "block_expired_documents",
+  "max_speed_kmh",
+  "section_break_2",
+  "enable_expiry_alerts",
+  "default_alert_days",
+  "column_break_2",
+  "alert_email_recipients",
+  "service_alert_km",
+  "service_alert_days",
+  "section_break_3",
+  "post_journal_entries",
+  "accrual_account",
+  "column_break_3",
+  "fuel_expense_account",
+  "maintenance_expense_account",
+  "fine_expense_account",
+  "section_break_4",
+  "issue_parts_from_stock",
+  "default_warehouse",
+  "column_break_4",
+  "trip_item",
+  "rental_item",
+  "fine_salary_component",
+  "section_break_5",
+  "gps_log_retention_days",
+  "column_break_5",
+  "gps_api_token"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Default Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "block_expired_documents",
+   "fieldtype": "Check",
+   "label": "Block Expired Mandatory Documents",
+   "default": 1,
+   "description": "Trips and rentals cannot use a vehicle or driver that has an expired mandatory document."
+  },
+  {
+   "fieldname": "max_speed_kmh",
+   "fieldtype": "Int",
+   "label": "Speed Limit (km/h)",
+   "default": 120,
+   "description": "GPS positions above this are flagged as Speeding. 0 = off."
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Alerts"
+  },
+  {
+   "fieldname": "enable_expiry_alerts",
+   "fieldtype": "Check",
+   "label": "Enable Expiry and Service Alerts",
+   "default": 1
+  },
+  {
+   "fieldname": "default_alert_days",
+   "fieldtype": "Int",
+   "label": "Default Alert Days Before Expiry",
+   "default": 30
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "alert_email_recipients",
+   "fieldtype": "Small Text",
+   "label": "Extra Alert Emails",
+   "description": "Comma separated. Users with the Fleet Manager role are always notified."
+  },
+  {
+   "fieldname": "service_alert_km",
+   "fieldtype": "Int",
+   "label": "Service Alert Before (km)",
+   "default": 1000
+  },
+  {
+   "fieldname": "service_alert_days",
+   "fieldtype": "Int",
+   "label": "Service Alert Before (days)",
+   "default": 14
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Accounting"
+  },
+  {
+   "fieldname": "post_journal_entries",
+   "fieldtype": "Check",
+   "label": "Post Journal Entries Automatically",
+   "description": "Fuel, workshop costs and company-paid fines create a Journal Entry on submit."
+  },
+  {
+   "fieldname": "accrual_account",
+   "fieldtype": "Link",
+   "label": "Credit (Accrual / Cash) Account",
+   "options": "Account",
+   "depends_on": "post_journal_entries",
+   "description": "Use a non-party account (e.g. Accrued Expenses, Cash). Debit accounts are below."
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fuel_expense_account",
+   "fieldtype": "Link",
+   "label": "Fuel Expense Account",
+   "options": "Account",
+   "depends_on": "post_journal_entries"
+  },
+  {
+   "fieldname": "maintenance_expense_account",
+   "fieldtype": "Link",
+   "label": "Maintenance Expense Account",
+   "options": "Account",
+   "depends_on": "post_journal_entries"
+  },
+  {
+   "fieldname": "fine_expense_account",
+   "fieldtype": "Link",
+   "label": "Fines Expense Account",
+   "options": "Account",
+   "depends_on": "post_journal_entries"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Stock and Billing"
+  },
+  {
+   "fieldname": "issue_parts_from_stock",
+   "fieldtype": "Check",
+   "label": "Issue Spare Parts from Stock"
+  },
+  {
+   "fieldname": "default_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Parts Warehouse",
+   "options": "Warehouse",
+   "depends_on": "issue_parts_from_stock"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "trip_item",
+   "fieldtype": "Link",
+   "label": "Item for Trip Invoices",
+   "options": "Item"
+  },
+  {
+   "fieldname": "rental_item",
+   "fieldtype": "Link",
+   "label": "Item for Rental Invoices",
+   "options": "Item"
+  },
+  {
+   "fieldname": "fine_salary_component",
+   "fieldtype": "Link",
+   "label": "Salary Component for Fine Deductions",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "GPS / Telematics"
+  },
+  {
+   "fieldname": "gps_log_retention_days",
+   "fieldtype": "Int",
+   "label": "Keep GPS Positions (days)",
+   "default": 90
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gps_api_token",
+   "fieldtype": "Password",
+   "label": "GPS API Token",
+   "description": "Devices or your tracking platform send this token to /api/method/ledgerx_fleet.api.gps.ingest"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-09 06:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fleet Management",
+ "name": "Fleet Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Fleet Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "icon": "fa fa-cog",
+ "issingle": 1
+}

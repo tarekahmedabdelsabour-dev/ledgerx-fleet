@@ -1,0 +1,54 @@
+{
+ "app": "ledgerx_fleet",
+ "creation": "2026-11-09 21:27:46.252384",
+ "docstatus": 0,
+ "doctype": "Dock",
+ "idx": 0,
+ "items": [
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "fleet-soft",
+   "link_to": "Fleet",
+   "link_type": "Sidebar",
+   "title": "Fleet"
+  },
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "wrench-soft",
+   "link_to": "Fleet Maintenance",
+   "link_type": "Sidebar",
+   "title": "Fleet Maintenance"
+  },
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "route-soft",
+   "link_to": "Fleet Operations",
+   "link_type": "Sidebar",
+   "title": "Fleet Operations"
+  },
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "pin-soft",
+   "link_to": "Fleet Tracking",
+   "link_type": "Sidebar",
+   "title": "Fleet Tracking"
+  },
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "chart-soft",
+   "link_to": "Fleet Reports",
+   "link_type": "Sidebar",
+   "title": "Fleet Reports"
+  }
+ ],
+ "modified": "2026-11-09 21:27:46.252384",
+ "modified_by": "Administrator",
+ "name": "ledgerx_fleet",
+ "owner": "Administrator",
+ "standard": 1
+}

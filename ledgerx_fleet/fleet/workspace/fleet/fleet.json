@@ -1,0 +1,104 @@
+{
+ "charts": [
+  {
+   "chart_name": "Vehicles by Status",
+   "label": "Vehicles by Status"
+  },
+  {
+   "chart_name": "Documents by Status",
+   "label": "Documents by Status"
+  }
+ ],
+ "content": "[{\"id\": \"7e2a1969db\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet</b></span>\", \"col\": 12}}, {\"id\": \"1361ee9f65\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Vehicles by Status\", \"col\": 6}}, {\"id\": \"18ea748ced\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Documents by Status\", \"col\": 6}}, {\"id\": \"9ecdc6e444\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Active Vehicles\", \"col\": 3}}, {\"id\": \"3495ca9ea0\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Vehicles In Maintenance\", \"col\": 3}}, {\"id\": \"e2159bd039\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Expired Documents\", \"col\": 3}}, {\"id\": \"66c2263828\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Documents Expiring Soon\", \"col\": 3}}, {\"id\": \"8935b4e1ff\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vehicle\", \"col\": 3}}, {\"id\": \"95ee904c14\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver\", \"col\": 3}}, {\"id\": \"7a8e688a80\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Assignment\", \"col\": 3}}, {\"id\": \"76f0e71427\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Document\", \"col\": 3}}, {\"id\": \"8480980a20\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Document Type\", \"col\": 3}}, {\"id\": \"844a837239\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vehicle Type\", \"col\": 3}}, {\"id\": \"e4822c2b31\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vehicle Tire\", \"col\": 3}}, {\"id\": \"b42ebc4928\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Document Expiry\", \"col\": 3}}]",
+ "creation": "2026-11-09 21:27:46.252384",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 1,
+ "icon": "truck",
+ "idx": 1,
+ "is_hidden": 0,
+ "label": "Fleet",
+ "links": [],
+ "modified": "2026-11-09 21:27:46.252384",
+ "modified_by": "Administrator",
+ "module": "Fleet",
+ "name": "Fleet",
+ "number_cards": [
+  {
+   "label": "Active Vehicles",
+   "number_card_name": "Active Vehicles"
+  },
+  {
+   "label": "Vehicles In Maintenance",
+   "number_card_name": "Vehicles In Maintenance"
+  },
+  {
+   "label": "Expired Documents",
+   "number_card_name": "Expired Documents"
+  },
+  {
+   "label": "Documents Expiring Soon",
+   "number_card_name": "Documents Expiring Soon"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 20.0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Vehicle",
+   "link_to": "Vehicle",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Driver",
+   "link_to": "Driver",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Fleet Assignment",
+   "link_to": "Fleet Assignment",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Fleet Document",
+   "link_to": "Fleet Document",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Fleet Document Type",
+   "link_to": "Fleet Document Type",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Vehicle Type",
+   "link_to": "Vehicle Type",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Vehicle Tire",
+   "link_to": "Vehicle Tire",
+   "type": "DocType"
+  },
+  {
+   "label": "Document Expiry",
+   "link_to": "Document Expiry",
+   "report_ref_doctype": "Fleet Document",
+   "type": "Report"
+  }
+ ],
+ "title": "Fleet",
+ "type": "Workspace"
+}

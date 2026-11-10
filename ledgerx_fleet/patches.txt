@@ -1,0 +1,4 @@
+[pre_model_sync]
+ledgerx_fleet.patches.create_fleet_modules
+
+[post_model_sync]

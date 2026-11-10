@@ -1,0 +1,92 @@
+{
+ "charts": [
+  {
+   "chart_name": "Maintenance Cost per Month",
+   "label": "Maintenance Cost per Month"
+  },
+  {
+   "chart_name": "Trip Revenue per Month",
+   "label": "Trip Revenue per Month"
+  }
+ ],
+ "content": "[{\"id\": \"8f9604d8d1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Reports</b></span>\", \"col\": 12}}, {\"id\": \"b2e8c50016\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Maintenance Cost per Month\", \"col\": 6}}, {\"id\": \"56fd42ac08\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trip Revenue per Month\", \"col\": 6}}, {\"id\": \"43042eeba2\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Fuel Cost This Month\", \"col\": 3}}, {\"id\": \"fb75d54270\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Expired Documents\", \"col\": 3}}, {\"id\": \"161a0f77c2\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Services\", \"col\": 3}}, {\"id\": \"9b6ee436a8\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Unpaid Fines\", \"col\": 3}}, {\"id\": \"8d41ec2890\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vehicle Cost Analysis\", \"col\": 3}}, {\"id\": \"d0c645a26f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fuel Consumption\", \"col\": 3}}, {\"id\": \"12f3bde3dc\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trip Profitability\", \"col\": 3}}, {\"id\": \"143ab7b759\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Document Expiry\", \"col\": 3}}, {\"id\": \"b5b89786df\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Due\", \"col\": 3}}, {\"id\": \"8a1b929d86\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Settings\", \"col\": 3}}]",
+ "creation": "2026-11-09 21:27:46.252384",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 1,
+ "icon": "chart-bar",
+ "idx": 5,
+ "is_hidden": 0,
+ "label": "Fleet Reports",
+ "links": [],
+ "modified": "2026-11-09 21:27:46.252384",
+ "modified_by": "Administrator",
+ "module": "Fleet Reports",
+ "name": "Fleet Reports",
+ "number_cards": [
+  {
+   "label": "Fuel Cost This Month",
+   "number_card_name": "Fuel Cost This Month"
+  },
+  {
+   "label": "Expired Documents",
+   "number_card_name": "Expired Documents"
+  },
+  {
+   "label": "Overdue Services",
+   "number_card_name": "Overdue Services"
+  },
+  {
+   "label": "Unpaid Fines",
+   "number_card_name": "Unpaid Fines"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 24.0,
+ "shortcuts": [
+  {
+   "label": "Vehicle Cost Analysis",
+   "link_to": "Vehicle Cost Analysis",
+   "report_ref_doctype": "Vehicle",
+   "type": "Report"
+  },
+  {
+   "label": "Fuel Consumption",
+   "link_to": "Fuel Consumption",
+   "report_ref_doctype": "Fuel Log",
+   "type": "Report"
+  },
+  {
+   "label": "Trip Profitability",
+   "link_to": "Trip Profitability",
+   "report_ref_doctype": "Fleet Trip",
+   "type": "Report"
+  },
+  {
+   "label": "Document Expiry",
+   "link_to": "Document Expiry",
+   "report_ref_doctype": "Fleet Document",
+   "type": "Report"
+  },
+  {
+   "label": "Maintenance Due",
+   "link_to": "Maintenance Due",
+   "report_ref_doctype": "Service Schedule",
+   "type": "Report"
+  },
+  {
+   "doc_view": "List",
+   "label": "Fleet Settings",
+   "link_to": "Fleet Settings",
+   "type": "DocType"
+  }
+ ],
+ "title": "Fleet Reports",
+ "type": "Workspace"
+}

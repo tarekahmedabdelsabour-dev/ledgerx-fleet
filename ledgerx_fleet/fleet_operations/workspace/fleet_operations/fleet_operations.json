@@ -1,0 +1,86 @@
+{
+ "charts": [
+  {
+   "chart_name": "Trip Revenue per Month",
+   "label": "Trip Revenue per Month"
+  },
+  {
+   "chart_name": "Trips by Status",
+   "label": "Trips by Status"
+  }
+ ],
+ "content": "[{\"id\": \"4f5bf89e16\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Operations</b></span>\", \"col\": 12}}, {\"id\": \"74df76412e\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trip Revenue per Month\", \"col\": 6}}, {\"id\": \"f189a4f288\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trips by Status\", \"col\": 6}}, {\"id\": \"98f34a1864\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Trips In Progress\", \"col\": 3}}, {\"id\": \"38da898862\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Active Rentals\", \"col\": 3}}, {\"id\": \"a4f0a53990\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Unpaid Fines\", \"col\": 3}}, {\"id\": \"da17168a32\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Incidents\", \"col\": 3}}, {\"id\": \"9f7c705259\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Trip\", \"col\": 3}}, {\"id\": \"b4bd172401\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rental Contract\", \"col\": 3}}, {\"id\": \"1aa7d60484\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Traffic Fine\", \"col\": 3}}, {\"id\": \"f16a2acf1d\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Incident\", \"col\": 3}}, {\"id\": \"8518b5801e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trip Profitability\", \"col\": 3}}]",
+ "creation": "2026-11-09 21:27:46.252384",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 1,
+ "icon": "route",
+ "idx": 3,
+ "is_hidden": 0,
+ "label": "Fleet Operations",
+ "links": [],
+ "modified": "2026-11-09 21:27:46.252384",
+ "modified_by": "Administrator",
+ "module": "Fleet Operations",
+ "name": "Fleet Operations",
+ "number_cards": [
+  {
+   "label": "Trips In Progress",
+   "number_card_name": "Trips In Progress"
+  },
+  {
+   "label": "Active Rentals",
+   "number_card_name": "Active Rentals"
+  },
+  {
+   "label": "Unpaid Fines",
+   "number_card_name": "Unpaid Fines"
+  },
+  {
+   "label": "Open Incidents",
+   "number_card_name": "Open Incidents"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 22.0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Fleet Trip",
+   "link_to": "Fleet Trip",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Rental Contract",
+   "link_to": "Rental Contract",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Traffic Fine",
+   "link_to": "Traffic Fine",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Fleet Incident",
+   "link_to": "Fleet Incident",
+   "type": "DocType"
+  },
+  {
+   "label": "Trip Profitability",
+   "link_to": "Trip Profitability",
+   "report_ref_doctype": "Fleet Trip",
+   "type": "Report"
+  }
+ ],
+ "title": "Fleet Operations",
+ "type": "Workspace"
+}

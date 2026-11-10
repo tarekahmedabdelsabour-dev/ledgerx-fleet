@@ -1,0 +1,501 @@
+'To' must be after 'From',يجب أن يكون وقت 'إلى' بعد وقت 'من'
+A cancelled work order cannot be submitted,لا يمكن اعتماد أمر شغل ملغي
+A new token replaces the old one. Devices using the old token will stop working.,المفتاح الجديد يستبدل القديم، والأجهزة التي تستخدم المفتاح القديم ستتوقف عن العمل.
+Account,الحساب
+Accounting,المحاسبة
+Accounting Not Configured,المحاسبة غير مضبوطة
+Active,نشط
+Active GPS Devices,أجهزة تتبع نشطة
+Active Rentals,عقود تأجير نشطة
+Active Vehicles,المركبات النشطة
+Actual End,النهاية الفعلية
+Actual Return,الإرجاع الفعلي
+Actual Start,البداية الفعلية
+Additional Salary,راتب إضافي
+Additional Salary {0} created as draft for HR review,تم إنشاء راتب إضافي {0} كمسودة لمراجعة الموارد البشرية
+Alert Days Before Expiry,أيام التنبيه قبل الانتهاء
+Alerts,التنبيهات
+All Season,لكل الفصول
+Already invoiced: {0},تمت الفوترة بالفعل: {0}
+Amended From,معدّل من
+Amount,المبلغ
+Amount must be greater than zero,يجب أن يكون المبلغ أكبر من صفر
+Appealed,تم التظلم
+Applies To,ينطبق على
+Apply Plan,تطبيق الخطة
+Apply to Vehicle,تطبيق على مركبة
+Approved,معتمد
+Approved Amount,المبلغ المعتمد
+At most {0} positions per request,الحد الأقصى {0} موقع في الطلب الواحد
+Attachment,مرفق
+Attachments,المرفقات
+Billable,قابل للفوترة
+Block Expired Mandatory Documents,منع المستندات الإلزامية المنتهية
+Body,هيكل
+Brakes,الفرامل
+Brand,الماركة
+Breakdown,عطل
+Bus,حافلة
+CNG,غاز طبيعي
+Cancel Additional Salary {0} first,ألغِ الراتب الإضافي {0} أولاً
+Cancel Sales Invoice {0} first,ألغِ فاتورة المبيعات {0} أولاً
+Cancelled,ملغي
+Cannot change status from {0} to {1},لا يمكن تغيير الحالة من {0} إلى {1}
+Capacity,السعة
+Car,سيارة
+Card,بطاقة
+Cargo,الحمولة
+Cargo Description,وصف الحمولة
+Cargo Weight (kg),وزن الحمولة (كجم)
+Cargo weight {0} kg exceeds the vehicle payload of {1} kg,وزن الحمولة {0} كجم يتجاوز حمولة المركبة {1} كجم
+Cash,نقدي
+Category,الفئة
+Charges,الرسوم
+Chauffeur (optional),سائق مرافق (اختياري)
+Choose the supplier of the external workshop,اختر مورد الورشة الخارجية
+Claim Filed,تم تقديم المطالبة
+Claim No,رقم المطالبة
+Claim Settled,تمت تسوية المطالبة
+Claim Status,حالة المطالبة
+Claimed Amount,المبلغ المطالب به
+Closed,مغلق
+Collision,تصادم
+Company,الشركة
+Completed,مكتمل
+Completion Date,تاريخ الإنجاز
+Completion Date cannot be before Start Date,تاريخ الإنجاز لا يمكن أن يسبق تاريخ البدء
+Consumption (L/100 km),الاستهلاك (لتر/100 كم)
+Copy it now. It is stored encrypted and will not be shown again.,انسخه الآن. يتم حفظه مشفراً ولن يظهر مرة أخرى.
+Corrective,إصلاحية
+Cost,التكلفة
+Cost Center,مركز التكلفة
+Cost per km,التكلفة لكل كم
+Costs,التكاليف
+Create,إنشاء
+Create Work Order,إنشاء أمر شغل
+Credit,آجل
+Credit (Accrual / Cash) Account,حساب الدائن (استحقاق / نقدية)
+Current Driver,السائق الحالي
+Current Odometer,العداد الحالي
+Current Vehicle,المركبة الحالية
+Customer,العميل
+Customer Haulage,نقل للعملاء
+Customer Name,اسم العميل
+Damage Charges,رسوم التلفيات
+Damage charges,رسوم التلفيات
+Date,التاريخ
+Date and Time,التاريخ والوقت
+Days,الأيام
+Days Left,الأيام المتبقية
+Deduct from Salary,خصم من الراتب
+Deductible,التحمل
+Deduction,الخصم
+Default Alert Days Before Expiry,أيام التنبيه الافتراضية قبل الانتهاء
+Default Cost Center,مركز التكلفة الافتراضي
+Default Fuel Type,نوع الوقود الافتراضي
+Default Parts Warehouse,مخزن قطع الغيار الافتراضي
+Default Service Plan,خطة الصيانة الافتراضية
+Deposit,التأمين
+Description,الوصف
+Destination,الوجهة
+Details,التفاصيل
+Device ID,معرّف الجهاز
+Diesel,ديزل
+Disabled,معطل
+Discount,الخصم
+Dispatch,إرسال
+Dispatched,تم الإرسال
+Distance (km),المسافة (كم)
+Distance Run (km),المسافة المقطوعة (كم)
+Distance Since Last Fill,المسافة منذ آخر تعبئة
+Document,المستند
+Document Expiry,انتهاء المستندات
+Document No,رقم المستند
+Document Type,نوع المستند
+Documents,المستندات
+Documents Expiring Soon,مستندات قاربت على الانتهاء
+Documents Not Valid,المستندات غير سارية
+Documents by Status,المستندات حسب الحالة
+Done,تم
+Driver,السائق
+Driver Allowance,بدل السائق
+Driver Name,اسم السائق
+Driver Permit,تصريح السائق
+Driver {0} is already on trip {1},السائق {0} في رحلة بالفعل {1}
+Driver {0}: {1},السائق {0}: {1}
+Driving License,رخصة القيادة
+Due Date,تاريخ الاستحقاق
+Due Soon,يستحق قريباً
+Electric,كهربائي
+Electrical,كهرباء
+Employee,الموظف
+Enable Expiry and Service Alerts,تفعيل تنبيهات الانتهاء والصيانة
+End Odometer,عداد النهاية
+End Odometer cannot be lower than Start Odometer,عداد النهاية لا يمكن أن يكون أقل من عداد البداية
+Ended,منتهي
+Engine No,رقم المحرك
+Enter the Claim No,أدخل رقم المطالبة
+Enter the End Odometer and Actual End to complete the trip,أدخل عداد النهاية والنهاية الفعلية لإنهاء الرحلة
+Enter the return odometer for {0},أدخل عداد الإرجاع للمركبة {0}
+Estimated Cost,التكلفة التقديرية
+Event,الحدث
+Every (days),كل (أيام)
+Every (km),كل (كم)
+Expected Life (km),العمر المتوقع (كم)
+Expense Type,نوع المصروف
+Expenses,المصروفات
+Expired,منتهي الصلاحية
+Expired Documents,مستندات منتهية
+Expiring Soon,ينتهي قريباً
+Expiring Within (days),ينتهي خلال (أيام)
+Expiry Date,تاريخ الانتهاء
+Expiry Date cannot be before Issue Date,تاريخ الانتهاء لا يمكن أن يسبق تاريخ الإصدار
+External,خارجية
+Extra Alert Emails,بريد تنبيه إضافي
+Extra Km,كم إضافي
+Extra Km Charges,رسوم الكيلومترات الإضافية
+Extra Km Rate,سعر الكيلومتر الإضافي
+Extra km - {0},كيلومترات إضافية - {0}
+Fault,المتسبب
+File,ملف
+Filed,مقدمة
+Fills,عدد التعبئات
+Fine Number,رقم المخالفة
+Fines Expense Account,حساب مصروف المخالفات
+Fire,حريق
+Fixed,ثابت
+Fleet,الأسطول
+Fleet Assignment,تسليم مركبة لسائق
+Fleet Attachment,مرفق الأسطول
+Fleet Cost Center,مركز تكلفة الأسطول
+Fleet Document,مستند الأسطول
+Fleet Document Type,نوع مستند الأسطول
+Fleet GPS Position,موقع GPS
+Fleet Incident,حادث
+Fleet Maintenance,صيانة الأسطول
+Fleet Management,إدارة الأسطول
+Fleet Operations,تشغيل الأسطول
+Fleet Reports,تقارير الأسطول
+Fleet Settings,إعدادات الأسطول
+Fleet Status,حالة الأسطول
+Fleet Tracking,تتبع الأسطول
+Fleet Trip,رحلة
+Fleet Work Order,أمر شغل صيانة
+Fleet alerts: {0} items need attention,تنبيهات الأسطول: {0} بنود تحتاج انتباهك
+From,من
+From Date,من تاريخ
+Front Left,أمامي أيسر
+Front Right,أمامي أيمن
+Fuel,الوقود
+Fuel Card,كارت وقود
+Fuel Consumption,استهلاك الوقود
+Fuel Cost This Month,تكلفة الوقود هذا الشهر
+Fuel Cost per Month,تكلفة الوقود شهريًا
+Fuel Expense Account,حساب مصروف الوقود
+Fuel Log,سجل وقود
+Fuel Type,نوع الوقود
+Fuel {0} - {1},وقود {0} - {1}
+Full Tank,تعبئة كاملة
+GPS / Telematics,تتبع GPS
+GPS API Token,مفتاح واجهة GPS
+GPS Device,جهاز تتبع
+General,عام
+Generate GPS Token,إنشاء مفتاح GPS
+Grand Total,الإجمالي
+Hand Over,تسليم
+Heading,الاتجاه
+Heavy Equipment,معدات ثقيلة
+Heavy Truck,شاحنة ثقيلة
+High,عالية
+Home,الرئيسية
+Hybrid,هجين
+IMEI,IMEI
+Ignition Off,إطفاء المحرك
+Ignition On,تشغيل المحرك
+In Maintenance,في الصيانة
+In Progress,قيد التنفيذ
+In Stock,بالمخزن
+In Transit,في الطريق
+Inactive,غير نشط
+Incident,حادث
+Injuries,إصابات
+Injury,إصابة
+Inspection,فحص
+Insurance Claim,مطالبة التأمين
+Insurer,شركة التأمين
+Internal,داخلية
+Interval,الفترة
+Invalid or missing token,المفتاح غير صالح أو مفقود
+Is Active,نشط
+Issue Date,تاريخ الإصدار
+Issue Spare Parts from Stock,صرف قطع الغيار من المخزون
+Issuer,الجهة المصدرة
+Issuing Authority,الجهة المُصدرة للمخالفة
+Item,الصنف
+Item Name,اسم الصنف
+Item for Rental Invoices,صنف فواتير التأجير
+Item for Trip Invoices,صنف فواتير الرحلات
+Journal Entry,قيد يومية
+Keep GPS Positions (days),مدة الاحتفاظ بمواقع GPS (أيام)
+Km Included per Day,كم مشمول يومياً
+LPG,غاز مسال
+Labor Cost,تكلفة العمالة
+Last Known Position,آخر موقع معروف
+Last Odometer,آخر عداد
+Last Seen,آخر ظهور
+Last Service Date,تاريخ آخر صيانة
+Last Service Odometer,عداد آخر صيانة
+Last Work Order,آخر أمر شغل
+Latitude,خط العرض
+Leased,مؤجرة لنا (إيجار تمويلي)
+Life,العمر الافتراضي
+Light Truck,شاحنة خفيفة
+Loading and Unloading,تحميل وتفريغ
+Location,الموقع
+Longitude,خط الطول
+Low,منخفضة
+Maintenance,الصيانة
+Maintenance Cost per Month,تكلفة الصيانة شهريًا
+Maintenance Due,الصيانة المستحقة
+Maintenance Expense Account,حساب مصروف الصيانة
+Mandatory,إلزامي
+Medical Certificate,شهادة طبية
+Medium,متوسطة
+Minibus,ميني باص
+Minor,بسيط
+Missing or expired mandatory documents:,مستندات إلزامية ناقصة أو منتهية:
+Model Year,سنة الصنع
+Moderate,متوسط
+Motorcycle,دراجة نارية
+Mounted,مركّب
+Mounted On,تاريخ التركيب
+Mounting,التركيب
+Net Loss,صافي الخسارة
+Next Due,الاستحقاق القادم
+Next Due Date,تاريخ الاستحقاق القادم
+Next Due Odometer,عداد الاستحقاق القادم
+No positions in the request,لا توجد مواقع في الطلب
+Not Filed,لم تُقدَّم
+Not allowed while the contract is {0},غير مسموح والعقد في حالة {0}
+Notes,ملاحظات
+OK,سليم
+Odometer,العداد
+Odometer (km),العداد (كم)
+Odometer In,عداد الدخول
+Odometer Out,عداد الخروج
+Odometer at Mounting,العداد عند التركيب
+Odometer at Removal,العداد عند الفك
+Odometer {0} is lower than the previous fill ({1} on {2}),العداد {0} أقل من التعبئة السابقة ({1} بتاريخ {2})
+Oil and Filters,زيت وفلاتر
+On Trip,في رحلة
+Only draft trips can change status,يمكن تغيير الحالة للرحلات المسودة فقط
+Open,مفتوح
+Open Date,تاريخ الفتح
+Open Incidents,حوادث مفتوحة
+Open Work Orders,أوامر شغل مفتوحة
+Operating Card,كارت التشغيل
+Operations,التشغيل
+Origin,نقطة الانطلاق
+Other,أخرى
+Other Cost,تكاليف أخرى
+Our Driver,سائقنا
+Out of Service,خارج الخدمة
+Overdue,متأخر
+Overdue Services,صيانات متأخرة
+Owned,مملوكة
+Ownership,الملكية
+Paid,مدفوع
+Paid Date,تاريخ السداد
+Parking,انتظار
+Parts,قطع الغيار
+Parts Cost,تكلفة القطع
+Passenger Seats,عدد المقاعد
+Payload (kg),الحمولة القصوى (كجم)
+Payment Mode,طريقة الدفع
+Per Km,للكيلومتر
+Per Ton,للطن
+Petrol,بنزين
+Pickup,بيك أب
+Plan Name,اسم الخطة
+Planned,مخطط
+Planned End,النهاية المخططة
+Planned End cannot be before Planned Start,النهاية المخططة لا يمكن أن تسبق البداية المخططة
+Planned Start,البداية المخططة
+Police Report No,رقم محضر الشرطة
+Position,الموضع
+Position Time,وقت الموقع
+Position {0} on {1} already has tire {2},الموضع {0} في {1} به إطار بالفعل {2}
+Post Journal Entries Automatically,ترحيل القيود تلقائياً
+Preventive,وقائية
+Priority,الأولوية
+Problem / Request,المشكلة / الطلب
+Profit,الربح
+Provider,المزوّد
+Purchase Date,تاريخ الشراء
+Qty,الكمية
+Quantity (L / kWh),الكمية (لتر / ك.و.س)
+Quantity must be greater than zero,يجب أن تكون الكمية أكبر من صفر
+Rate,السعر
+Rate Basis,أساس التسعير
+Rate per Day,السعر اليومي
+Rear Left,خلفي أيسر
+Rear Right,خلفي أيمن
+Receipt,الإيصال
+Rejected,مرفوض
+Related,مرتبط
+Remaining (days),المتبقي (أيام)
+Remaining (km),المتبقي (كم)
+Removed On,تاريخ الفك
+Renewed,تم التجديد
+Renewed By,جُدّد بواسطة
+Rental Amount,قيمة التأجير
+Rental Contract,عقد تأجير
+Rental Vehicle,مركبة التأجير
+Rental contract {0},عقد التأجير {0}
+Rental of {0} ({1} → {2}),تأجير {0} ({1} ← {2})
+Rental {0} ({1} → {2}),تأجير {0} ({1} ← {2})
+Rented In,مستأجرة من الغير
+Rented Out,مؤجرة للعملاء
+Repair Cost (Work Orders),تكلفة الإصلاح (أوامر الشغل)
+Reported,تم الإبلاغ
+Reported By,أبلغ بواسطة
+Reports,التقارير
+Reserved,محجوز
+Responsibility,المسؤولية
+Responsible,المسؤول
+Resume Work,استئناف العمل
+Retired,خارج الخدمة
+Retread,مُجدَّد
+Return,إرجاع
+Return Vehicles,إرجاع المركبات
+Return odometer of {0} cannot be lower than {1},عداد إرجاع {0} لا يمكن أن يكون أقل من {1}
+Return time cannot be before the start of the contract,وقت الإرجاع لا يمكن أن يسبق بداية العقد
+Returned,تم الإرجاع
+Revenue,الإيراد
+Route,المسار
+Row {0}: duplicate task {1},الصف {0}: المهمة {1} مكررة
+Row {0}: set an interval in km or days for {1},الصف {0}: حدد فترة بالكيلومتر أو الأيام للمهمة {1}
+Row {0}: {1} is listed twice,الصف {0}: {1} مكرر
+SIM Number,رقم الشريحة
+Salary Component for Fine Deductions,بند الراتب لخصم المخالفات
+Salary deduction applies only when the driver is responsible,خصم الراتب ينطبق فقط عندما يكون السائق هو المسؤول
+Sales Invoice,فاتورة مبيعات
+Sedan,سيدان
+Service Alert Before (days),تنبيه الصيانة قبل (أيام)
+Service Alert Before (km),تنبيه الصيانة قبل (كم)
+Service Plan,خطة الصيانة
+Service Plan Task,مهمة خطة الصيانة
+Service Schedule,جدول الصيانة
+Services Due Soon,صيانات قريبة
+Set 'Item for Rental Invoices' in Fleet Settings,حدد 'صنف فواتير التأجير' في إعدادات الأسطول
+Set 'Item for Trip Invoices' in Fleet Settings,حدد 'صنف فواتير الرحلات' في إعدادات الأسطول
+Set 'Salary Component for Fine Deductions' in Fleet Settings,حدد 'بند الراتب لخصم المخالفات' في إعدادات الأسطول
+Set an interval in km or days,حدد فترة بالكيلومتر أو الأيام
+Set the credit account to post journal entries automatically.,حدد حساب الدائن لترحيل القيود تلقائياً.
+"Set the expense accounts and the credit account in Fleet Settings, or switch off automatic posting.",حدد حسابات المصروفات وحساب الدائن في إعدادات الأسطول، أو أوقف الترحيل التلقائي.
+Setup,الإعداد
+Severe,جسيم
+Severity,الخطورة
+Shared,مشترك
+Show on Map,عرض على الخريطة
+Size,المقاس
+Sold,مباعة
+Spare,احتياطي
+Spare Parts,قطع الغيار
+Speed (km/h),السرعة (كم/س)
+Speed Limit (km/h),حد السرعة (كم/س)
+Speeding,تجاوز السرعة
+Start Date,تاريخ البدء
+Start Odometer,عداد البداية
+Start Trip,بدء الرحلة
+Start Work,بدء العمل
+Station,المحطة
+Station and Payment,المحطة والدفع
+Status,الحالة
+Stock Entry,حركة مخزون
+Stock and Billing,المخزون والفوترة
+Submit the contract first,اعتمد العقد أولاً
+Submit the trip first,اعتمد الرحلة أولاً
+Submit the work order to complete it,اعتمد أمر الشغل لإنهائه
+Summer,صيفي
+Supplier,المورّد
+Tank Capacity (L),سعة الخزان (لتر)
+Task,المهمة
+Tasks,المهام
+Technical Inspection,الفحص الفني
+Terms,الشروط
+Terms and Conditions,الشروط والأحكام
+The driver must be linked to an Employee to deduct from salary,يجب ربط السائق بموظف للخصم من الراتب
+Theft,سرقة
+Third Party,طرف ثالث
+This trip has no billable revenue,هذه الرحلة لا تحتوي على إيراد قابل للفوترة
+Tire,إطار
+Tire Serial No,الرقم التسلسلي للإطار
+Tire Type,نوع الإطار
+Tires,الإطارات
+Title,العنوان
+To,إلى
+To Date,إلى تاريخ
+To Date cannot be before From Date,تاريخ النهاية لا يمكن أن يسبق تاريخ البداية
+Toll,رسوم طريق
+Total Cost,إجمالي التكلفة
+Total Expenses,إجمالي المصروفات
+Total Loss,هلاك كلي
+Tracking,التتبع
+Traffic Fine,مخالفة مرورية
+Traffic fine {0} - {1},مخالفة مرورية {0} - {1}
+Trailer,مقطورة
+Trailer must be a different vehicle,يجب أن تكون المقطورة مركبة مختلفة
+Transport Permit,تصريح نقل
+"Transport {0} → {1} ({2}, {3})",نقل {0} ← {1} ({2}، {3})
+Trip Expense,مصروف رحلة
+Trip Profitability,ربحية الرحلات
+Trip Revenue per Month,إيراد الرحلات شهريًا
+Trip Type,نوع الرحلة
+Trip {0} ({1} → {2}),رحلة {0} ({1} ← {2})
+Trip {0}: {1} → {2},رحلة {0}: {1} ← {2}
+Trips In Progress,رحلات جارية
+Trips by Status,الرحلات حسب الحالة
+Truck,شاحنة
+Type,النوع
+Typical Validity (months),مدة الصلاحية المعتادة (شهور)
+Under Review,قيد المراجعة
+Unknown,غير معروف
+Unpaid,غير مدفوع
+Unpaid Fines,مخالفات غير مسددة
+Urgent,عاجلة
+Validity,الصلاحية
+Van,فان
+Vandalism,تخريب
+Vehicle,المركبة
+Vehicle Cost Analysis,تحليل تكلفة المركبات
+Vehicle Insurance,تأمين المركبة
+Vehicle Not Available,المركبة غير متاحة
+Vehicle Registration,ترخيص المركبة
+Vehicle Tire,إطار مركبة
+Vehicle Type,نوع المركبة
+Vehicle and Position are required for a mounted tire,المركبة والموضع مطلوبان للإطار المركّب
+Vehicle {0}: {1},المركبة {0}: {1}
+Vehicles,المركبات
+Vehicles In Maintenance,مركبات في الصيانة
+Vehicles and Drivers,المركبات والسائقون
+Vehicles by Status,المركبات حسب الحالة
+Violation,المخالفة
+Violation Date and Time,تاريخ ووقت المخالفة
+Waiting Parts,بانتظار قطع الغيار
+Warehouse,المخزن
+What Happened,ما الذي حدث
+Winter,شتوي
+Work Order,أمر شغل
+Work Order Part,قطعة أمر الشغل
+Work Order Task,مهمة أمر الشغل
+Work Order {0} (in workshop),أمر الشغل {0} (في الورشة)
+Work Orders by Status,أوامر الشغل حسب الحالة
+Work Type,نوع الشغل
+Work order {0} - {1},أمر شغل {0} - {1}
+Workshop,الورشة
+{0} already has a schedule for {1}: {2},{0} لديه جدول لـ {1} بالفعل: {2}
+{0} cannot be negative,{0} لا يمكن أن يكون سالباً
+{0} is not available:,{0} غير متاحة:
+{0} schedules created,تم إنشاء {0} جدول صيانة
+{0} {1} is already assigned in {2},{0} {1} مُسلَّم بالفعل في {2}
