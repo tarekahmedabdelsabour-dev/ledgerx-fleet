@@ -33,6 +33,10 @@ MODULES = [
 		("Fleet Trip", "Fleet Trip", "DocType", "route"), ("Rental Contract", "Rental Contract", "DocType", "key-round"),
 		("Traffic Fine", "Traffic Fine", "DocType", "triangle-alert"),
 		("Fleet Incident", "Fleet Incident", "DocType", "siren"),
+		("Driver Odometer Log", "Driver Odometer Log", "DocType", "gauge"),
+		("Driver Expense", "Driver Expense", "DocType", "receipt"),
+		("Driver Custody Entry", "Driver Custody Entry", "DocType", "wallet"),
+		("Driver Custody", "Driver Custody", "Report", "banknote"),
 		("Trip Profitability", "Trip Profitability", "Report", "trending-up"),
 	], [("Customer", "Customer", "users"), ("Sales Invoice", "Sales Invoice", "receipt"),
 		("Additional Salary", "Additional Salary", "wallet")]),
@@ -52,7 +56,7 @@ MODULES = [
 ]
 
 REPORT_DT = {"Document Expiry": "Fleet Document", "Maintenance Due": "Service Schedule",
-	"Vehicle Cost Analysis": "Vehicle", "Fuel Consumption": "Fuel Log", "Trip Profitability": "Fleet Trip"}
+	"Vehicle Cost Analysis": "Vehicle", "Fuel Consumption": "Fuel Log", "Trip Profitability": "Fleet Trip", "Driver Custody": "Driver Expense"}
 
 
 def dump(path, data):

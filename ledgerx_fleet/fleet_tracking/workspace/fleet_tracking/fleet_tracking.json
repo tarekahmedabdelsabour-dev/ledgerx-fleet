@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"id\": \"8147ac571f\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Tracking</b></span>\", \"col\": 12}}, {\"id\": \"8bcb6ae9db\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Active GPS Devices\", \"col\": 3}}, {\"id\": \"6feb93762f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"GPS Device\", \"col\": 3}}, {\"id\": \"d70b0c2d91\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet GPS Position\", \"col\": 3}}]",
- "creation": "2026-11-09 21:27:46.252384",
+ "content": "[{\"id\": \"294841ff12\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Tracking</b></span>\", \"col\": 12}}, {\"id\": \"1a5b066cfe\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Active GPS Devices\", \"col\": 3}}, {\"id\": \"6bab0ad0ac\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"GPS Device\", \"col\": 3}}, {\"id\": \"d8af859c29\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet GPS Position\", \"col\": 3}}]",
+ "creation": "2026-11-10 12:27:51.322461",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -12,7 +12,7 @@
  "is_hidden": 0,
  "label": "Fleet Tracking",
  "links": [],
- "modified": "2026-11-09 21:27:46.252384",
+ "modified": "2026-11-10 12:27:51.322461",
  "modified_by": "Administrator",
  "module": "Fleet Tracking",
  "name": "Fleet Tracking",

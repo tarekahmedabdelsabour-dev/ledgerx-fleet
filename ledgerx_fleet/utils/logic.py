@@ -176,3 +176,40 @@ def normalize_position(raw, speed_unit="kmh"):
 		"ignition": None if ign is None else int(bool(ign)),
 		"odometer": None if odo is None else float(odo),
 	}
+
+
+def custody_summary(entries, expenses):
+	"""Driver custody ("عهدة") balance.
+
+	entries:  iterable of (entry_type, amount)  - Advance / Return / Reimbursement
+	expenses: iterable of (paid_from, status, amount) - Custody|Personal, Pending|Approved|Rejected
+
+	custody_balance = advances - returns - expenses paid from custody (not rejected)
+	owed_to_driver  = approved personal expenses - reimbursements
+	Rejected expenses never count. Pending custody expenses already reduce the balance.
+	"""
+	adv = ret = reimb = 0.0
+	for t, a in entries:
+		a = float(a or 0)
+		if t == "Advance":
+			adv += a
+		elif t == "Return":
+			ret += a
+		elif t == "Reimbursement":
+			reimb += a
+	spent = personal = pending = 0.0
+	for paid_from, status, a in expenses:
+		a = float(a or 0)
+		if status == "Rejected":
+			continue
+		if paid_from == "Custody":
+			spent += a
+			if status == "Pending":
+				pending += a
+		elif status == "Approved":
+			personal += a
+	return {
+		"advances": adv, "returns": ret, "spent": spent, "pending": pending,
+		"custody_balance": round(adv - ret - spent, 2),
+		"owed_to_driver": round(personal - reimb, 2),
+	}

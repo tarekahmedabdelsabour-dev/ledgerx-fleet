@@ -1,6 +1,7 @@
 'To' must be after 'From',يجب أن يكون وقت 'إلى' بعد وقت 'من'
 A cancelled work order cannot be submitted,لا يمكن اعتماد أمر شغل ملغي
 A new token replaces the old one. Devices using the old token will stop working.,المفتاح الجديد يستبدل القديم، والأجهزة التي تستخدم المفتاح القديم ستتوقف عن العمل.
+A photo is required,الصورة مطلوبة
 Account,الحساب
 Accounting,المحاسبة
 Accounting Not Configured,المحاسبة غير مضبوطة
@@ -13,6 +14,9 @@ Actual Return,الإرجاع الفعلي
 Actual Start,البداية الفعلية
 Additional Salary,راتب إضافي
 Additional Salary {0} created as draft for HR review,تم إنشاء راتب إضافي {0} كمسودة لمراجعة الموارد البشرية
+Advance,عهدة مستلمة
+Advance: cash given to the driver. Return: cash the driver hands back. Reimbursement: company repays expenses the driver paid personally.,عهدة مستلمة: نقدية سُلّمت للسائق. رد عهدة: نقدية أعادها السائق. رد مصروفات: الشركة تسدد ما دفعه السائق من ماله.
+Advances,العهد المستلمة
 Alert Days Before Expiry,أيام التنبيه قبل الانتهاء
 Alerts,التنبيهات
 All Season,لكل الفصول
@@ -78,6 +82,9 @@ Credit (Accrual / Cash) Account,حساب الدائن (استحقاق / نقدي
 Current Driver,السائق الحالي
 Current Odometer,العداد الحالي
 Current Vehicle,المركبة الحالية
+Custody,العهدة
+Custody = from the cash the company gave the driver. Personal = driver paid from his own pocket.,العهدة = من النقدية التي سلمتها الشركة للسائق. من جيب السائق = دفعها السائق من ماله الخاص.
+Custody Balance,رصيد العهدة
 Customer,العميل
 Customer Haulage,نقل للعملاء
 Customer Name,اسم العميل
@@ -85,6 +92,7 @@ Damage Charges,رسوم التلفيات
 Damage charges,رسوم التلفيات
 Date,التاريخ
 Date and Time,التاريخ والوقت
+Day Distance (km),مسافة اليوم (كم)
 Days,الأيام
 Days Left,الأيام المتبقية
 Deduct from Salary,خصم من الراتب
@@ -96,6 +104,7 @@ Default Fuel Type,نوع الوقود الافتراضي
 Default Parts Warehouse,مخزن قطع الغيار الافتراضي
 Default Service Plan,خطة الصيانة الافتراضية
 Deposit,التأمين
+Describe what happened,اكتب وصف ما حدث
 Description,الوصف
 Destination,الوجهة
 Details,التفاصيل
@@ -119,8 +128,13 @@ Documents by Status,المستندات حسب الحالة
 Done,تم
 Driver,السائق
 Driver Allowance,بدل السائق
+Driver Custody,عهدة السائقين
+Driver Custody Entry,حركة عهدة سائق
+Driver Expense,مصروف سائق
 Driver Name,اسم السائق
+Driver Odometer Log,قراءة عداد السائق
 Driver Permit,تصريح السائق
+Driver expense {0},مصروف سائق {0}
 Driver {0} is already on trip {1},السائق {0} في رحلة بالفعل {1}
 Driver {0}: {1},السائق {0}: {1}
 Driving License,رخصة القيادة
@@ -132,11 +146,17 @@ Employee,الموظف
 Enable Expiry and Service Alerts,تفعيل تنبيهات الانتهاء والصيانة
 End Odometer,عداد النهاية
 End Odometer cannot be lower than Start Odometer,عداد النهاية لا يمكن أن يكون أقل من عداد البداية
+End of Day,نهاية اليوم
+End reading cannot be lower than the start reading {0},قراءة النهاية لا يمكن أن تقل عن قراءة البداية {0}
 Ended,منتهي
 Engine No,رقم المحرك
 Enter the Claim No,أدخل رقم المطالبة
 Enter the End Odometer and Actual End to complete the trip,أدخل عداد النهاية والنهاية الفعلية لإنهاء الرحلة
+Enter the litres for a fuel expense,أدخل عدد اللترات لمصروف الوقود
+Enter the odometer reading,أدخل قراءة العداد
+Enter the rejection reason,أدخل سبب الرفض
 Enter the return odometer for {0},أدخل عداد الإرجاع للمركبة {0}
+Entry Type,نوع الحركة
 Estimated Cost,التكلفة التقديرية
 Event,الحدث
 Every (days),كل (أيام)
@@ -159,6 +179,7 @@ Extra km - {0},كيلومترات إضافية - {0}
 Fault,المتسبب
 File,ملف
 Filed,مقدمة
+Filled on End of Day: end reading minus start reading.,تُحسب عند نهاية اليوم: قراءة النهاية ناقص قراءة البداية.
 Fills,عدد التعبئات
 Fine Number,رقم المخالفة
 Fines Expense Account,حساب مصروف المخالفات
@@ -225,7 +246,13 @@ Insurance Claim,مطالبة التأمين
 Insurer,شركة التأمين
 Internal,داخلية
 Interval,الفترة
+Invalid category,نوع غير صالح
+Invalid log type,نوع قراءة غير صالح
 Invalid or missing token,المفتاح غير صالح أو مفقود
+Invalid payment source,مصدر دفع غير صالح
+Invalid photo,صورة غير صالحة
+Invalid severity,درجة خطورة غير صالحة
+Invalid type,نوع غير صالح
 Is Active,نشط
 Issue Date,تاريخ الإصدار
 Issue Spare Parts from Stock,صرف قطع الغيار من المخزون
@@ -250,8 +277,11 @@ Latitude,خط العرض
 Leased,مؤجرة لنا (إيجار تمويلي)
 Life,العمر الافتراضي
 Light Truck,شاحنة خفيفة
+Litres,اللترات
 Loading and Unloading,تحميل وتفريغ
 Location,الموقع
+Log Type,نوع القراءة
+Logged At,وقت التسجيل
 Longitude,خط الطول
 Low,منخفضة
 Maintenance,الصيانة
@@ -275,6 +305,7 @@ Next Due,الاستحقاق القادم
 Next Due Date,تاريخ الاستحقاق القادم
 Next Due Odometer,عداد الاستحقاق القادم
 No positions in the request,لا توجد مواقع في الطلب
+No vehicle is assigned to you today,لا توجد سيارة مسندة إليك اليوم
 Not Filed,لم تُقدَّم
 Not allowed while the contract is {0},غير مسموح والعقد في حالة {0}
 Notes,ملاحظات
@@ -283,8 +314,10 @@ Odometer,العداد
 Odometer (km),العداد (كم)
 Odometer In,عداد الدخول
 Odometer Out,عداد الخروج
+Odometer Photo,صورة العداد
 Odometer at Mounting,العداد عند التركيب
 Odometer at Removal,العداد عند الفك
+Odometer {0} is lower than the last recorded reading {1},العداد {0} أقل من آخر قراءة مسجلة {1}
 Odometer {0} is lower than the previous fill ({1} on {2}),العداد {0} أقل من التعبئة السابقة ({1} بتاريخ {2})
 Oil and Filters,زيت وفلاتر
 On Trip,في رحلة
@@ -302,25 +335,32 @@ Our Driver,سائقنا
 Out of Service,خارج الخدمة
 Overdue,متأخر
 Overdue Services,صيانات متأخرة
+Owed to Driver,مستحق للسائق
 Owned,مملوكة
 Ownership,الملكية
 Paid,مدفوع
 Paid Date,تاريخ السداد
+Paid From,دُفع من
 Parking,انتظار
 Parts,قطع الغيار
 Parts Cost,تكلفة القطع
 Passenger Seats,عدد المقاعد
 Payload (kg),الحمولة القصوى (كجم)
 Payment Mode,طريقة الدفع
+Pending,قيد المراجعة
+Pending Review,قيد المراجعة
 Per Km,للكيلومتر
 Per Ton,للطن
+Personal,من جيب السائق
 Petrol,بنزين
+Photo is too large,الصورة كبيرة جدًا
 Pickup,بيك أب
 Plan Name,اسم الخطة
 Planned,مخطط
 Planned End,النهاية المخططة
 Planned End cannot be before Planned Start,النهاية المخططة لا يمكن أن تسبق البداية المخططة
 Planned Start,البداية المخططة
+Please log in,من فضلك سجّل الدخول
 Police Report No,رقم محضر الشرطة
 Position,الموضع
 Position Time,وقت الموقع
@@ -330,6 +370,7 @@ Preventive,وقائية
 Priority,الأولوية
 Problem / Request,المشكلة / الطلب
 Profit,الربح
+Proof,الإثبات
 Provider,المزوّد
 Purchase Date,تاريخ الشراء
 Qty,الكمية
@@ -341,7 +382,12 @@ Rate per Day,السعر اليومي
 Rear Left,خلفي أيسر
 Rear Right,خلفي أيمن
 Receipt,الإيصال
+Receipt Photo,صورة الإيصال
+Record the start of day first,سجّل بداية اليوم أولًا
+Reference,المرجع
+Reimbursement,رد مصروفات
 Rejected,مرفوض
+Rejection Reason,سبب الرفض
 Related,مرتبط
 Remaining (days),المتبقي (أيام)
 Remaining (km),المتبقي (كم)
@@ -359,6 +405,7 @@ Rented Out,مؤجرة للعملاء
 Repair Cost (Work Orders),تكلفة الإصلاح (أوامر الشغل)
 Reported,تم الإبلاغ
 Reported By,أبلغ بواسطة
+Reported from the driver page,تم الإبلاغ من صفحة السائق
 Reports,التقارير
 Reserved,محجوز
 Responsibility,المسؤولية
@@ -371,7 +418,10 @@ Return Vehicles,إرجاع المركبات
 Return odometer of {0} cannot be lower than {1},عداد إرجاع {0} لا يمكن أن يكون أقل من {1}
 Return time cannot be before the start of the contract,وقت الإرجاع لا يمكن أن يسبق بداية العقد
 Returned,تم الإرجاع
+Returns,المرتجع
 Revenue,الإيراد
+Review,المراجعة
+Reviewed By,راجعه
 Route,المسار
 Row {0}: duplicate task {1},الصف {0}: المهمة {1} مكررة
 Row {0}: set an interval in km or days for {1},الصف {0}: حدد فترة بالكيلومتر أو الأيام للمهمة {1}
@@ -405,10 +455,12 @@ Spare Parts,قطع الغيار
 Speed (km/h),السرعة (كم/س)
 Speed Limit (km/h),حد السرعة (كم/س)
 Speeding,تجاوز السرعة
+Spent from Custody,المصروف من العهدة
 Start Date,تاريخ البدء
 Start Odometer,عداد البداية
 Start Trip,بدء الرحلة
 Start Work,بدء العمل
+Start of Day,بداية اليوم
 Station,المحطة
 Station and Payment,المحطة والدفع
 Status,الحالة
@@ -419,6 +471,8 @@ Submit the trip first,اعتمد الرحلة أولاً
 Submit the work order to complete it,اعتمد أمر الشغل لإنهائه
 Summer,صيفي
 Supplier,المورّد
+Take a photo of the odometer,صوّر العداد
+Take a photo of the receipt,صوّر الإيصال
 Tank Capacity (L),سعة الخزان (لتر)
 Task,المهمة
 Tasks,المهام
@@ -484,6 +538,7 @@ Violation,المخالفة
 Violation Date and Time,تاريخ ووقت المخالفة
 Waiting Parts,بانتظار قطع الغيار
 Warehouse,المخزن
+Wash,غسيل
 What Happened,ما الذي حدث
 Winter,شتوي
 Work Order,أمر شغل
@@ -494,8 +549,10 @@ Work Orders by Status,أوامر الشغل حسب الحالة
 Work Type,نوع الشغل
 Work order {0} - {1},أمر شغل {0} - {1}
 Workshop,الورشة
+Your user is not linked to an active driver. Ask the fleet manager.,حسابك غير مرتبط بسائق نشط. اطلب من مدير الأسطول.
 {0} already has a schedule for {1}: {2},{0} لديه جدول لـ {1} بالفعل: {2}
 {0} cannot be negative,{0} لا يمكن أن يكون سالباً
+{0} is already recorded for this driver on {1},{0} مسجلة بالفعل لهذا السائق بتاريخ {1}
 {0} is not available:,{0} غير متاحة:
 {0} schedules created,تم إنشاء {0} جدول صيانة
 {0} {1} is already assigned in {2},{0} {1} مُسلَّم بالفعل في {2}

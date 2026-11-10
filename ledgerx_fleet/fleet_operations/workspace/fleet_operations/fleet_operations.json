@@ -9,8 +9,8 @@
    "label": "Trips by Status"
   }
  ],
- "content": "[{\"id\": \"4f5bf89e16\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Operations</b></span>\", \"col\": 12}}, {\"id\": \"74df76412e\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trip Revenue per Month\", \"col\": 6}}, {\"id\": \"f189a4f288\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trips by Status\", \"col\": 6}}, {\"id\": \"98f34a1864\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Trips In Progress\", \"col\": 3}}, {\"id\": \"38da898862\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Active Rentals\", \"col\": 3}}, {\"id\": \"a4f0a53990\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Unpaid Fines\", \"col\": 3}}, {\"id\": \"da17168a32\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Incidents\", \"col\": 3}}, {\"id\": \"9f7c705259\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Trip\", \"col\": 3}}, {\"id\": \"b4bd172401\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rental Contract\", \"col\": 3}}, {\"id\": \"1aa7d60484\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Traffic Fine\", \"col\": 3}}, {\"id\": \"f16a2acf1d\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Incident\", \"col\": 3}}, {\"id\": \"8518b5801e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trip Profitability\", \"col\": 3}}]",
- "creation": "2026-11-09 21:27:46.252384",
+ "content": "[{\"id\": \"205d2957bc\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Operations</b></span>\", \"col\": 12}}, {\"id\": \"3f9596f123\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trip Revenue per Month\", \"col\": 6}}, {\"id\": \"8be4af2d64\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trips by Status\", \"col\": 6}}, {\"id\": \"7094c73d29\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Trips In Progress\", \"col\": 3}}, {\"id\": \"a77436c55b\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Active Rentals\", \"col\": 3}}, {\"id\": \"232d032b9e\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Unpaid Fines\", \"col\": 3}}, {\"id\": \"85b9d5a8cd\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Incidents\", \"col\": 3}}, {\"id\": \"30f96b8f3f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Trip\", \"col\": 3}}, {\"id\": \"f8abfc56b0\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rental Contract\", \"col\": 3}}, {\"id\": \"ca75113815\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Traffic Fine\", \"col\": 3}}, {\"id\": \"a1b6d73267\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Incident\", \"col\": 3}}, {\"id\": \"dc3a7e99c9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Odometer Log\", \"col\": 3}}, {\"id\": \"fb64350062\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Expense\", \"col\": 3}}, {\"id\": \"d05736809d\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Custody Entry\", \"col\": 3}}, {\"id\": \"bb8887a64d\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Custody\", \"col\": 3}}, {\"id\": \"eb41952f07\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trip Profitability\", \"col\": 3}}]",
+ "creation": "2026-11-10 12:27:51.322461",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -21,7 +21,7 @@
  "is_hidden": 0,
  "label": "Fleet Operations",
  "links": [],
- "modified": "2026-11-09 21:27:46.252384",
+ "modified": "2026-11-10 12:27:51.322461",
  "modified_by": "Administrator",
  "module": "Fleet Operations",
  "name": "Fleet Operations",
@@ -73,6 +73,30 @@
    "label": "Fleet Incident",
    "link_to": "Fleet Incident",
    "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Driver Odometer Log",
+   "link_to": "Driver Odometer Log",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Driver Expense",
+   "link_to": "Driver Expense",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Driver Custody Entry",
+   "link_to": "Driver Custody Entry",
+   "type": "DocType"
+  },
+  {
+   "label": "Driver Custody",
+   "link_to": "Driver Custody",
+   "report_ref_doctype": "Driver Expense",
+   "type": "Report"
   },
   {
    "label": "Trip Profitability",

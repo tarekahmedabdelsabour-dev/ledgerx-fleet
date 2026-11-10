@@ -589,4 +589,81 @@ DOCTYPES.append(dict(
 	],
 ))
 
+# --------------------------------------------------------------------------- driver app (mobile page /driver)
+DOCTYPES.append(dict(
+	name="Driver Odometer Log", autoname="format:ODO-{YYYY}-{#####}", title_field="driver", icon="fa fa-tachometer",
+	search_fields="driver,vehicle", perms="ops_nosubmit",
+	fields=[
+		F("driver", "Link", "Driver", options="Driver", reqd=1, in_list_view=1, in_standard_filter=1),
+		F("vehicle", "Link", "Vehicle", options="Vehicle", reqd=1, in_list_view=1, in_standard_filter=1),
+		F("log_date", "Date", "Date", reqd=1, default="Today", in_list_view=1, in_standard_filter=1),
+		C(),
+		F("log_type", "Select", "Log Type", options="Start of Day\nEnd of Day", reqd=1, in_list_view=1,
+			in_standard_filter=1),
+		F("odometer", "Int", "Odometer", reqd=1, in_list_view=1),
+		F("day_distance", "Int", "Day Distance (km)", read_only=1, no_copy=1,
+			description="Filled on End of Day: end reading minus start reading."),
+		S("Proof"),
+		F("photo", "Attach Image", "Odometer Photo"),
+		F("logged_at", "Datetime", "Logged At", default="Now", read_only=1),
+		C(),
+		F("latitude", "Float", "Latitude", read_only=1, precision="6"),
+		F("longitude", "Float", "Longitude", read_only=1, precision="6"),
+		F("notes", "Small Text", "Notes"),
+	],
+))
+
+DOCTYPES.append(dict(
+	name="Driver Expense", autoname="format:DEXP-{YYYY}-{#####}", title_field="driver", icon="fa fa-money",
+	search_fields="driver,vehicle,category", perms="ops_nosubmit",
+	fields=[
+		F("driver", "Link", "Driver", options="Driver", reqd=1, in_list_view=1, in_standard_filter=1),
+		F("vehicle", "Link", "Vehicle", options="Vehicle", reqd=1, in_standard_filter=1),
+		F("expense_date", "Date", "Date", reqd=1, default="Today", in_list_view=1),
+		C(),
+		F("category", "Select", "Category", reqd=1, in_list_view=1, in_standard_filter=1,
+			options="Fuel\nMaintenance\nTires\nToll\nParking\nWash\nOther"),
+		F("amount", "Currency", "Amount", reqd=1, in_list_view=1),
+		F("paid_from", "Select", "Paid From", options="Custody\nPersonal", default="Custody", reqd=1,
+			in_list_view=1, description="Custody = from the cash the company gave the driver. Personal = driver paid from his own pocket."),
+		S("Details"),
+		F("litres", "Float", "Litres", depends_on="eval:doc.category=='Fuel'",
+			mandatory_depends_on="eval:doc.category=='Fuel'"),
+		F("odometer", "Int", "Odometer", depends_on="eval:doc.category=='Fuel'"),
+		C(),
+		F("description", "Small Text", "Description"),
+		F("receipt", "Attach Image", "Receipt Photo"),
+		S("Review"),
+		F("status", "Select", "Status", options="Pending\nApproved\nRejected", default="Pending",
+			in_list_view=1, in_standard_filter=1),
+		F("reviewed_by", "Link", "Reviewed By", options="User", read_only=1, no_copy=1),
+		C(),
+		F("rejection_reason", "Small Text", "Rejection Reason", depends_on="eval:doc.status=='Rejected'"),
+		F("fuel_log", "Link", "Fuel Log", options="Fuel Log", read_only=1, no_copy=1),
+		S("Accounting", collapsible=1),
+		COMPANY(),
+		COST_CENTER(),
+	],
+))
+
+DOCTYPES.append(dict(
+	name="Driver Custody Entry", autoname="format:CUS-{YYYY}-{#####}", title_field="driver", icon="fa fa-briefcase",
+	search_fields="driver,entry_type,reference", perms="ops_nosubmit",
+	fields=[
+		F("driver", "Link", "Driver", options="Driver", reqd=1, in_list_view=1, in_standard_filter=1),
+		F("posting_date", "Date", "Date", reqd=1, default="Today", in_list_view=1),
+		C(),
+		F("entry_type", "Select", "Entry Type", reqd=1, in_list_view=1, in_standard_filter=1,
+			options="Advance\nReturn\nReimbursement",
+			description="Advance: cash given to the driver. Return: cash the driver hands back. Reimbursement: company repays expenses the driver paid personally."),
+		F("amount", "Currency", "Amount", reqd=1, in_list_view=1),
+		S("Details"),
+		F("reference", "Data", "Reference"),
+		F("notes", "Small Text", "Notes"),
+		S("Accounting", collapsible=1),
+		COMPANY(),
+		COST_CENTER(),
+	],
+))
+
 EXTRA_STRINGS = []

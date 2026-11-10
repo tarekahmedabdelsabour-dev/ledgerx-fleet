@@ -1,0 +1,178 @@
+{% extends "templates/web.html" %}
+{% block navbar %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block page_content %}
+<style>
+#lxd{--bg:#f4f6f8;--card:#fff;--ink:#1c2733;--mute:#6b7785;--brand:#0f6b5c;--warn:#b45309;--bad:#b42318;--line:#e3e8ee;
+ direction:rtl;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;color:var(--ink);max-width:560px;margin:0 auto;padding:12px 16px 40px}
+@media(prefers-color-scheme:dark){#lxd{--bg:#12181f;--card:#1b242d;--ink:#e8edf2;--mute:#9aa7b4;--line:#2a3541;--brand:#3fbf9f}}
+body{background:var(--bg,#f4f6f8)}
+#lxd *{box-sizing:border-box}
+#lxd .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+#lxd h1{font-size:18px;margin:6px 0}#lxd h2{font-size:15px;margin:0 0 8px}
+#lxd .mute{color:var(--mute);font-size:13px}
+#lxd .row{display:flex;gap:10px;flex-wrap:wrap}
+#lxd .kpi{flex:1 1 40%;background:var(--bg);border-radius:10px;padding:10px}
+#lxd .kpi b{display:block;font-size:20px}
+#lxd button.big{width:100%;min-height:56px;font-size:17px;border:0;border-radius:12px;background:var(--brand);color:#fff;margin:6px 0;cursor:pointer}
+#lxd button.alt{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+#lxd button.bad{background:var(--bad)}
+#lxd button:disabled{opacity:.5}
+#lxd label{display:block;margin:10px 0 4px;font-size:14px}
+#lxd input,#lxd select,#lxd textarea{width:100%;min-height:46px;font-size:16px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#lxd .sheet{display:none}#lxd .sheet.on{display:block}
+#lxd img.prev{max-width:100%;border-radius:10px;margin-top:8px;display:none}
+#lxd .msg{padding:10px;border-radius:10px;margin:8px 0;display:none}
+#lxd .msg.ok{background:#e6f4ef;color:#0b5a44;display:block}#lxd .msg.err{background:#fdecea;color:var(--bad);display:block}
+#lxd table{width:100%;border-collapse:collapse;font-size:14px}#lxd td{padding:6px 2px;border-bottom:1px solid var(--line)}
+#lxd .pill{font-size:12px;padding:2px 8px;border-radius:99px;background:var(--bg)}
+#lxd .neg{color:var(--bad)}
+</style>
+<div id="lxd">
+ <h1 id="hello">...</h1>
+ <div class="mute" id="veh"></div>
+ <div id="top" class="msg"></div>
+
+ <div class="card" id="custody">
+  <h2>العهدة</h2>
+  <div class="row">
+   <div class="kpi"><span class="mute">رصيد العهدة</span><b id="bal">-</b></div>
+   <div class="kpi"><span class="mute">مستحق لي</span><b id="owed">-</b></div>
+   <div class="kpi"><span class="mute">استلمت</span><b id="adv">-</b></div>
+   <div class="kpi"><span class="mute">صرفت</span><b id="spent">-</b></div>
+  </div>
+  <div class="mute" id="pend"></div>
+ </div>
+
+ <div class="card" id="day">
+  <h2>يوم العمل</h2>
+  <div id="daystate" class="mute"></div>
+  <button class="big" id="b-start" data-sheet="s-odo" data-type="Start of Day">بداية اليوم - تصوير العداد</button>
+  <button class="big alt" id="b-end" data-sheet="s-odo" data-type="End of Day">نهاية اليوم - تصوير العداد</button>
+ </div>
+
+ <div class="card">
+  <button class="big alt" data-sheet="s-exp">تسجيل مصروف (بنزين / صيانة / أخرى)</button>
+  <button class="big bad" data-sheet="s-inc">إبلاغ عن عطل أو حادث</button>
+ </div>
+
+ <div class="card sheet" id="s-odo">
+  <h2 id="odo-title"></h2>
+  <label>قراءة العداد (كم)</label><input id="odo" type="number" inputmode="numeric" min="0">
+  <label>صورة العداد</label>
+  <input id="odo-photo" type="file" accept="image/*" capture="environment">
+  <img class="prev" id="odo-prev" alt="">
+  <div class="msg" id="odo-msg"></div>
+  <button class="big" id="odo-save">حفظ</button><button class="big alt" data-close>إلغاء</button>
+ </div>
+
+ <div class="card sheet" id="s-exp">
+  <h2>تسجيل مصروف</h2>
+  <label>النوع</label>
+  <select id="e-cat"><option value="Fuel">بنزين / سولار</option><option value="Maintenance">صيانة</option><option value="Tires">إطارات</option><option value="Toll">رسوم طريق</option><option value="Parking">انتظار</option><option value="Wash">غسيل</option><option value="Other">أخرى</option></select>
+  <label>المبلغ</label><input id="e-amt" type="number" inputmode="decimal" min="0">
+  <div id="e-fuel">
+   <label>عدد اللترات</label><input id="e-l" type="number" inputmode="decimal" min="0">
+   <label>قراءة العداد (كم)</label><input id="e-odo" type="number" inputmode="numeric" min="0">
+  </div>
+  <label>دُفع من</label>
+  <select id="e-from"><option value="Custody">العهدة</option><option value="Personal">من جيبي (يُرد لي)</option></select>
+  <label>ملاحظات</label><textarea id="e-desc" rows="2"></textarea>
+  <label>صورة الفاتورة / الإيصال</label>
+  <input id="e-photo" type="file" accept="image/*" capture="environment">
+  <img class="prev" id="e-prev" alt="">
+  <div class="msg" id="e-msg"></div>
+  <button class="big" id="e-save">حفظ المصروف</button><button class="big alt" data-close>إلغاء</button>
+ </div>
+
+ <div class="card sheet" id="s-inc">
+  <h2>إبلاغ عن عطل أو حادث</h2>
+  <label>النوع</label>
+  <select id="i-type"><option value="Breakdown">عطل</option><option value="Collision">حادث تصادم</option><option value="Theft">سرقة</option><option value="Fire">حريق</option><option value="Vandalism">تخريب</option><option value="Injury">إصابة</option><option value="Other">أخرى</option></select>
+  <label>الخطورة</label>
+  <select id="i-sev"><option value="Minor">بسيط</option><option value="Moderate">متوسط</option><option value="Severe">خطير</option></select>
+  <label>المكان</label><input id="i-loc" type="text">
+  <label>وصف ما حدث</label><textarea id="i-desc" rows="3"></textarea>
+  <label><input id="i-inj" type="checkbox" style="width:auto;min-height:0"> يوجد إصابات</label>
+  <label>صورة (اختياري)</label>
+  <input id="i-photo" type="file" accept="image/*" capture="environment">
+  <img class="prev" id="i-prev" alt="">
+  <div class="msg" id="i-msg"></div>
+  <button class="big bad" id="i-save">إرسال البلاغ</button><button class="big alt" data-close>إلغاء</button>
+ </div>
+
+ <div class="card"><h2>آخر المصروفات</h2><table id="exps"></table></div>
+ <div class="card"><h2>حركة العهدة</h2><table id="ents"></table></div>
+</div>
+<script>
+(function(){
+ var CSRF="{{ csrf_token }}", $=function(i){return document.getElementById(i)}, ME=null, photos={}, geo=null, curType=null;
+ var AR_TYPE={Advance:"عهدة مستلمة",Return:"رد عهدة",Reimbursement:"رد مصروفات"};
+ var AR_CAT={Fuel:"بنزين / سولار",Maintenance:"صيانة",Tires:"إطارات",Toll:"رسوم طريق",Parking:"انتظار",Wash:"غسيل",Other:"أخرى"};
+ var AR_ST={Pending:"قيد المراجعة",Approved:"معتمد",Rejected:"مرفوض"};
+ function money(n){return (Number(n)||0).toLocaleString("ar-EG",{maximumFractionDigits:2})+" "+(ME?ME.currency:"")}
+ function esc(s){var d=document.createElement("div");d.textContent=s==null?"":s;return d.innerHTML}
+ function api(method,args){
+  var fd=new FormData();for(var k in (args||{})){if(args[k]!==null&&args[k]!==undefined)fd.append(k,args[k])}
+  return fetch("/api/method/ledgerx_fleet.api.driver."+method,{method:args?"POST":"GET",body:args?fd:undefined,headers:{"X-Frappe-CSRF-Token":CSRF,"Accept":"application/json"},credentials:"same-origin"})
+   .then(function(r){return r.json().then(function(j){
+     if(!r.ok||j.exc||j._server_messages&&!j.message){
+       var m="تعذر تنفيذ الطلب";
+       try{var sm=JSON.parse(j._server_messages||"[]");if(sm.length){m=JSON.parse(sm[0]).message.replace(/<[^>]+>/g,"")}}catch(e){}
+       if(r.status===401||r.status===403&&!j._server_messages){m="يجب تسجيل الدخول بحساب سائق"}
+       throw new Error(m)}
+     return j.message})})
+ }
+ function show(id,txt,cls){var e=$(id);e.className="msg "+cls;e.textContent=txt}
+ function compress(file){return new Promise(function(ok,no){
+  var img=new Image(),fr=new FileReader();
+  fr.onload=function(){img.onload=function(){var s=Math.min(1,1280/Math.max(img.width,img.height)),c=document.createElement("canvas");
+   c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext("2d").drawImage(img,0,0,c.width,c.height);ok(c.toDataURL("image/jpeg",.72))};
+   img.onerror=no;img.src=fr.result};fr.onerror=no;fr.readAsDataURL(file)})}
+ function bindPhoto(inp,prev,key){$(inp).addEventListener("change",function(){var f=this.files[0];if(!f)return;
+  compress(f).then(function(d){photos[key]=d;var p=$(prev);p.src=d;p.style.display="block"})})}
+ bindPhoto("odo-photo","odo-prev","odo");bindPhoto("e-photo","e-prev","e");bindPhoto("i-photo","i-prev","i");
+ function grabGeo(){if(navigator.geolocation){navigator.geolocation.getCurrentPosition(function(p){geo=p.coords},function(){},{timeout:6000,maximumAge:120000})}}
+ function openSheet(id){document.querySelectorAll(".sheet").forEach(function(s){s.classList.remove("on")});$(id).classList.add("on");$(id).scrollIntoView({behavior:"smooth"})}
+ document.querySelectorAll("[data-sheet]").forEach(function(b){b.addEventListener("click",function(){
+  if(b.dataset.type){curType=b.dataset.type;$("odo-title").textContent=curType==="Start of Day"?"بداية اليوم":"نهاية اليوم";$("odo").value="";$("odo-prev").style.display="none";photos.odo=null;$("odo-msg").className="msg";grabGeo()}
+  openSheet(b.dataset.sheet)})});
+ document.querySelectorAll("[data-close]").forEach(function(b){b.addEventListener("click",function(){document.querySelectorAll(".sheet").forEach(function(s){s.classList.remove("on")})})});
+ $("e-cat").addEventListener("change",function(){$("e-fuel").style.display=this.value==="Fuel"?"block":"none"});
+ function render(){
+  $("hello").textContent="أهلاً "+ME.driver_name;
+  var v=ME.vehicle_info;$("veh").textContent=v?("سيارتك: "+ME.vehicle+" - "+(v.make||"")+" "+(v.model||"")+" - آخر عداد "+(v.last_odometer||0)+" كم"):"لا توجد سيارة مسندة إليك حالياً";
+  var c=ME.custody;$("bal").textContent=money(c.custody_balance);$("bal").className=c.custody_balance<0?"neg":"";
+  $("owed").textContent=money(c.owed_to_driver);$("adv").textContent=money(c.advances-c.returns);$("spent").textContent=money(c.spent);
+  $("pend").textContent=c.pending>0?("منها "+money(c.pending)+" قيد المراجعة"):"";
+  var st=ME.start,en=ME.end,t="";
+  if(!ME.vehicle)t="";else if(!st)t="لم تسجل بداية اليوم بعد";else if(!en)t="بداية اليوم: "+st.odometer+" كم";else t="تم إنهاء اليوم - المسافة: "+(en.day_distance||0)+" كم";
+  $("daystate").textContent=t;
+  $("b-start").style.display=(!st&&ME.vehicle)?"block":"none";$("b-end").style.display=(st&&!en)?"block":"none";
+  $("exps").innerHTML=ME.expenses.map(function(e){return "<tr><td>"+esc(e.expense_date)+"</td><td>"+esc(AR_CAT[e.category]||e.category)+"</td><td>"+money(e.amount)+"</td><td><span class='pill'>"+esc(AR_ST[e.status])+"</span>"+(e.status==="Rejected"&&e.rejection_reason?"<div class='mute'>"+esc(e.rejection_reason)+"</div>":"")+"</td></tr>"}).join("")||"<tr><td class='mute'>لا يوجد</td></tr>";
+  $("ents").innerHTML=ME.custody_entries.map(function(e){return "<tr><td>"+esc(e.posting_date)+"</td><td>"+esc(AR_TYPE[e.entry_type]||e.entry_type)+"</td><td>"+money(e.amount)+"</td></tr>"}).join("")||"<tr><td class='mute'>لا يوجد</td></tr>";
+ }
+ function load(){return api("me").then(function(m){ME=m;render()}).catch(function(e){show("top",e.message,"err");document.querySelectorAll(".card").forEach(function(c){c.style.display="none"})})}
+ function busy(id,on){$(id).disabled=on}
+ $("odo-save").addEventListener("click",function(){
+  var o=$("odo").value;if(!o){return show("odo-msg","اكتب قراءة العداد","err")}if(!photos.odo){return show("odo-msg","صوّر العداد أولاً","err")}
+  busy("odo-save",true);
+  api("log_odometer",{log_type:curType,odometer:o,photo:photos.odo,latitude:geo&&geo.latitude,longitude:geo&&geo.longitude}).then(function(r){
+   show("odo-msg","تم الحفظ"+(r.day_distance!=null?" - مسافة اليوم "+r.day_distance+" كم":""),"ok");setTimeout(function(){document.querySelectorAll(".sheet").forEach(function(s){s.classList.remove("on")});load()},900)
+  }).catch(function(e){show("odo-msg",e.message,"err")}).then(function(){busy("odo-save",false)})});
+ $("e-save").addEventListener("click",function(){
+  if(!$("e-amt").value){return show("e-msg","اكتب المبلغ","err")}if(!photos.e){return show("e-msg","صوّر الفاتورة أولاً","err")}
+  busy("e-save",true);
+  api("add_expense",{category:$("e-cat").value,amount:$("e-amt").value,paid_from:$("e-from").value,litres:$("e-l").value,odometer:$("e-odo").value,description:$("e-desc").value,photo:photos.e}).then(function(){
+   show("e-msg","تم تسجيل المصروف وهو قيد المراجعة","ok");["e-amt","e-l","e-odo","e-desc"].forEach(function(i){$(i).value=""});$("e-prev").style.display="none";photos.e=null;load()
+  }).catch(function(e){show("e-msg",e.message,"err")}).then(function(){busy("e-save",false)})});
+ $("i-save").addEventListener("click",function(){
+  if(!$("i-desc").value.trim()){return show("i-msg","اكتب وصف ما حدث","err")}
+  busy("i-save",true);
+  api("report_incident",{incident_type:$("i-type").value,severity:$("i-sev").value,location:$("i-loc").value,description:$("i-desc").value,injuries:$("i-inj").checked?1:0,photo:photos.i}).then(function(r){
+   show("i-msg","تم إرسال البلاغ رقم "+r.name,"ok");$("i-desc").value="";$("i-prev").style.display="none";photos.i=null
+  }).catch(function(e){show("i-msg",e.message,"err")}).then(function(){busy("i-save",false)})});
+ load();
+})();
+</script>
+{% endblock %}

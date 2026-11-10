@@ -105,3 +105,42 @@ class TestDemoData(unittest.TestCase):
 				self.assertIn(t[1], cats)
 		for v in data.VEHICLES:
 			self.assertIn(v[5], ("Petrol", "Diesel"))
+
+
+class TestCustody(unittest.TestCase):
+	def test_balance(self):
+		r = L.custody_summary(
+			[("Advance", 5000), ("Advance", 1000), ("Return", 500), ("Reimbursement", 100)],
+			[("Custody", "Approved", 1200), ("Custody", "Pending", 300), ("Custody", "Rejected", 999),
+				("Personal", "Approved", 250), ("Personal", "Pending", 80), ("Personal", "Rejected", 40)],
+		)
+		self.assertEqual(r["custody_balance"], 5000 + 1000 - 500 - 1200 - 300)
+		self.assertEqual(r["pending"], 300)
+		self.assertEqual(r["owed_to_driver"], 250 - 100)
+		self.assertEqual(L.custody_summary([], [])["custody_balance"], 0)
+
+	def test_driver_api_fields_exist(self):
+		import json, os, re
+		base = os.path.dirname(os.path.dirname(__file__))
+		def fields(dt):
+			p = os.path.join(base, "fleet_management/doctype", dt.lower().replace(" ", "_"), dt.lower().replace(" ", "_") + ".json")
+			return {f["fieldname"]: f for f in json.load(open(p))["fields"]}
+		src = open(os.path.join(base, "api/driver.py"), encoding="utf-8").read()
+		for dt, keys in {
+			"Driver Odometer Log": ["driver", "vehicle", "log_date", "log_type", "odometer", "notes", "latitude", "longitude", "logged_at", "photo"],
+			"Driver Expense": ["driver", "vehicle", "expense_date", "category", "amount", "paid_from", "litres", "odometer", "description", "status", "receipt"],
+			"Fleet Incident": ["vehicle", "driver", "incident_datetime", "incident_type", "severity", "location", "description", "injuries", "status", "attachments"],
+		}.items():
+			f = fields(dt)
+			for k in keys:
+				self.assertIn(k, f, f"{dt}.{k}")
+		# select options used by the page / api must exist in the doctypes
+		opts = lambda dt, k: set(fields(dt)[k]["options"].split("\n"))
+		self.assertTrue({"Fuel", "Maintenance", "Tires", "Toll", "Parking", "Wash", "Other"} <= opts("Driver Expense", "category"))
+		self.assertTrue({"Breakdown", "Collision", "Theft", "Fire", "Vandalism", "Injury", "Other"} <= opts("Fleet Incident", "incident_type"))
+		self.assertTrue({"Minor", "Moderate", "Severe", "Total Loss"} <= opts("Fleet Incident", "severity"))
+		self.assertTrue({"Start of Day", "End of Day"} <= opts("Driver Odometer Log", "log_type"))
+		html = open(os.path.join(base, "www/driver.html"), encoding="utf-8").read()
+		for m in re.findall(r'<option value="([A-Za-z ]+)"', html):
+			self.assertTrue(any(m in o for dt, k in [("Driver Expense", "category"), ("Driver Expense", "paid_from"),
+				("Fleet Incident", "incident_type"), ("Fleet Incident", "severity")] for o in [opts(dt, k)]), m)
