@@ -12,7 +12,7 @@ class TrafficFine(Document):
 		if not self.company:
 			self.company = s.company
 		if not self.cost_center:
-			self.cost_center = fleet.cost_center_for(self.vehicle) or s.default_cost_center
+			self.cost_center = fleet.cost_center_for(self.vehicle) or s.cost_center
 		if flt(self.amount) <= 0:
 			frappe.throw(_("Amount must be greater than zero"))
 		contract, customer = fleet.find_rental_at(self.vehicle, self.fine_datetime)

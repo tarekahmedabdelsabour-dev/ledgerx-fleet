@@ -13,7 +13,7 @@ class FleetTrip(Document):
 		if not self.company:
 			self.company = s.company
 		if not self.cost_center:
-			self.cost_center = fleet.cost_center_for(self.vehicle) or s.default_cost_center
+			self.cost_center = fleet.cost_center_for(self.vehicle) or s.cost_center
 		if self.vehicle and self.trailer and self.vehicle == self.trailer:
 			frappe.throw(_("Trailer must be a different vehicle"))
 		if self.planned_end and logic.to_datetime(self.planned_end) < logic.to_datetime(self.planned_start):

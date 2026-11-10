@@ -13,7 +13,7 @@ class FleetWorkOrder(Document):
 		if not self.company:
 			self.company = s.company
 		if not self.cost_center:
-			self.cost_center = fleet.cost_center_for(self.vehicle) or s.default_cost_center
+			self.cost_center = fleet.cost_center_for(self.vehicle) or s.cost_center
 		if not self.odometer:
 			self.odometer = frappe.db.get_value("Vehicle", self.vehicle, "last_odometer") or 0
 		for p in self.parts:

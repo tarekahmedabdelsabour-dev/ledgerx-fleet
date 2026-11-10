@@ -185,7 +185,7 @@ def post_journal_entry(doc, debit_account, amount, remark, posting_date=None):
 			_("Set the expense accounts and the credit account in Fleet Settings, or switch off automatic posting."),
 			title=_("Accounting Not Configured"),
 		)
-	cc = doc.get("cost_center") or settings.default_cost_center
+	cc = doc.get("cost_center") or settings.cost_center
 	rows = []
 	for acc, side in ((debit_account, "debit"), (credit, "credit")):
 		row = {"account": acc, f"{side}_in_account_currency": amount}

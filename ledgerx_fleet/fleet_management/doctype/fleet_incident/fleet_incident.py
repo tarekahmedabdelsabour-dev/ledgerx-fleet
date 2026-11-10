@@ -32,7 +32,7 @@ class FleetIncident(Document):
 		if not self.company:
 			self.company = s.company
 		if not self.cost_center:
-			self.cost_center = fleet.cost_center_for(self.vehicle) or s.default_cost_center
+			self.cost_center = fleet.cost_center_for(self.vehicle) or s.cost_center
 		if not self.driver:
 			self.driver = fleet.find_driver_at(self.vehicle, self.incident_datetime)
 		if self.name:

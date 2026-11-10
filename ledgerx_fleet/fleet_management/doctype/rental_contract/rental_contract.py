@@ -15,7 +15,7 @@ class RentalContract(Document):
 		if not self.company:
 			self.company = s.company
 		if not self.cost_center:
-			self.cost_center = s.default_cost_center
+			self.cost_center = s.cost_center
 		if logic.to_datetime(self.to_date) <= logic.to_datetime(self.from_date):
 			frappe.throw(_("'To' must be after 'From'"))
 		seen = set()

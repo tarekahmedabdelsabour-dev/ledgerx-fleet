@@ -15,7 +15,7 @@ class FuelLog(Document):
 		if not self.company:
 			self.company = s.company
 		if not self.cost_center:
-			self.cost_center = fleet.cost_center_for(self.vehicle) or s.default_cost_center
+			self.cost_center = fleet.cost_center_for(self.vehicle) or s.cost_center
 		v = frappe.db.get_value("Vehicle", self.vehicle, ["last_odometer", "fuel_type", "current_driver"], as_dict=True)
 		if not self.driver:
 			self.driver = v.current_driver
