@@ -20,6 +20,9 @@ body{background:var(--bg,#f4f6f8)}
 #lxd button:disabled{opacity:.5}
 #lxd label{display:block;margin:10px 0 4px;font-size:14px}
 #lxd input,#lxd select,#lxd textarea{width:100%;min-height:46px;font-size:16px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#lxd .camwrap{position:fixed;inset:0;background:#000;z-index:9999;display:none;flex-direction:column}
+#lxd .camwrap.on{display:flex}#lxd .camwrap video{flex:1;min-height:0;width:100%;object-fit:contain;background:#000}
+#lxd .camwrap .bar{display:flex;gap:10px;padding:12px}#lxd .camwrap .bar button{flex:1}
 #lxd .sheet{display:none}#lxd .sheet.on{display:block}
 #lxd img.prev{max-width:100%;border-radius:10px;margin-top:8px;display:none}
 #lxd .msg{padding:10px;border-radius:10px;margin:8px 0;display:none}
@@ -29,6 +32,8 @@ body{background:var(--bg,#f4f6f8)}
 #lxd .neg{color:var(--bad)}
 </style>
 <div id="lxd">
+<div class="camwrap" id="camwrap"><video id="camv" autoplay playsinline muted></video>
+ <div class="bar"><button class="big" id="cam-snap" type="button">التقاط</button><button class="big alt" id="cam-x" type="button">إلغاء</button></div></div>
  <h1 id="hello">...</h1>
  <div class="mute" id="veh"></div>
  <div id="top" class="msg"></div>
@@ -60,6 +65,8 @@ body{background:var(--bg,#f4f6f8)}
   <h2 id="odo-title"></h2>
   <label>قراءة العداد (كم)</label><input id="odo" type="number" inputmode="numeric" min="0">
   <label>صورة العداد</label>
+  <button type="button" class="big alt cam" data-key="odo" data-prev="odo-prev">فتح الكاميرا والتقاط صورة</button>
+  <div class="mute">أو اختر صورة من الجهاز:</div>
   <input id="odo-photo" type="file" accept="image/*" capture="environment">
   <img class="prev" id="odo-prev" alt="">
   <div class="msg" id="odo-msg"></div>
@@ -79,6 +86,8 @@ body{background:var(--bg,#f4f6f8)}
   <select id="e-from"><option value="Custody">العهدة</option><option value="Personal">من جيبي (يُرد لي)</option></select>
   <label>ملاحظات</label><textarea id="e-desc" rows="2"></textarea>
   <label>صورة الفاتورة / الإيصال</label>
+  <button type="button" class="big alt cam" data-key="e" data-prev="e-prev">فتح الكاميرا والتقاط صورة</button>
+  <div class="mute">أو اختر صورة من الجهاز:</div>
   <input id="e-photo" type="file" accept="image/*" capture="environment">
   <img class="prev" id="e-prev" alt="">
   <div class="msg" id="e-msg"></div>
@@ -95,6 +104,8 @@ body{background:var(--bg,#f4f6f8)}
   <label>وصف ما حدث</label><textarea id="i-desc" rows="3"></textarea>
   <label><input id="i-inj" type="checkbox" style="width:auto;min-height:0"> يوجد إصابات</label>
   <label>صورة (اختياري)</label>
+  <button type="button" class="big alt cam" data-key="i" data-prev="i-prev">فتح الكاميرا والتقاط صورة</button>
+  <div class="mute">أو اختر صورة من الجهاز:</div>
   <input id="i-photo" type="file" accept="image/*" capture="environment">
   <img class="prev" id="i-prev" alt="">
   <div class="msg" id="i-msg"></div>
@@ -132,6 +143,20 @@ body{background:var(--bg,#f4f6f8)}
  function bindPhoto(inp,prev,key){$(inp).addEventListener("change",function(){var f=this.files[0];if(!f)return;
   compress(f).then(function(d){photos[key]=d;var p=$(prev);p.src=d;p.style.display="block"})})}
  bindPhoto("odo-photo","odo-prev","odo");bindPhoto("e-photo","e-prev","e");bindPhoto("i-photo","i-prev","i");
+
+ var camStream=null,camKey=null,camPrev=null;
+ function camStop(){if(camStream){camStream.getTracks().forEach(function(t){t.stop()});camStream=null}$("camwrap").classList.remove("on")}
+ function camOpen(key,prev){
+  if(!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)){alert("المتصفح لا يدعم الكاميرا هنا (يلزم HTTPS أو localhost). اختر صورة من الجهاز.");return}
+  navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"},width:{ideal:1920}},audio:false}).then(function(s){
+   camStream=s;camKey=key;camPrev=prev;var v=$("camv");v.srcObject=s;$("camwrap").classList.add("on");v.play&&v.play()
+  }).catch(function(e){alert("تعذر فتح الكاميرا: اسمح للمتصفح باستخدام الكاميرا ثم أعد المحاولة، أو اختر صورة من الجهاز.")})}
+ $("cam-snap").addEventListener("click",function(){
+  var v=$("camv");if(!v.videoWidth)return;var s=Math.min(1,1280/Math.max(v.videoWidth,v.videoHeight)),c=document.createElement("canvas");
+  c.width=Math.round(v.videoWidth*s);c.height=Math.round(v.videoHeight*s);c.getContext("2d").drawImage(v,0,0,c.width,c.height);
+  var d=c.toDataURL("image/jpeg",.72);photos[camKey]=d;var p=$(camPrev);p.src=d;p.style.display="block";camStop()});
+ $("cam-x").addEventListener("click",camStop);
+ document.querySelectorAll(".cam").forEach(function(b){b.addEventListener("click",function(){camOpen(b.dataset.key,b.dataset.prev)})});
  function grabGeo(){if(navigator.geolocation){navigator.geolocation.getCurrentPosition(function(p){geo=p.coords},function(){},{timeout:6000,maximumAge:120000})}}
  function openSheet(id){document.querySelectorAll(".sheet").forEach(function(s){s.classList.remove("on")});$(id).classList.add("on");$(id).scrollIntoView({behavior:"smooth"})}
  document.querySelectorAll("[data-sheet]").forEach(function(b){b.addEventListener("click",function(){
