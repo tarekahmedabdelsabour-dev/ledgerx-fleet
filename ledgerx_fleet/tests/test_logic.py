@@ -79,3 +79,29 @@ class TestLogic(unittest.TestCase):
 
 if __name__ == "__main__":
 	unittest.main()
+
+
+class TestDemoData(unittest.TestCase):
+	"""Static check: every key the demo loader writes exists in the DocType JSON."""
+
+	def test_loader_fields_exist(self):
+		import ast, glob, json, os, re
+		base = os.path.dirname(os.path.dirname(__file__))
+		fields = {}
+		for f in glob.glob(os.path.join(base, "fleet_management/doctype/*/*.json")):
+			d = json.load(open(f))
+			if d.get("doctype") == "DocType":
+				fields[d["name"]] = {x["fieldname"] for x in d["fields"]}
+		src = open(os.path.join(base, "demo/loader.py"), encoding="utf-8").read()
+		for dt in ("Fleet Document", "Fuel Log", "Fleet Trip", "Rental Contract", "Traffic Fine", "Fleet Incident"):
+			self.assertIn(dt, fields)
+		self.assertNotIn("default_cost_center", src)
+		self.assertIn("cost_center", fields["Fleet Settings"])
+		self.assertIn("station_name", fields["Fuel Log"])
+		from ledgerx_fleet.demo import data
+		cats = {"Oil and Filters", "Brakes", "Tires", "Inspection", "Electrical", "Body", "Other"}
+		for _p, _v, tasks in data.SERVICE_PLANS:
+			for t in tasks:
+				self.assertIn(t[1], cats)
+		for v in data.VEHICLES:
+			self.assertIn(v[5], ("Petrol", "Diesel"))
