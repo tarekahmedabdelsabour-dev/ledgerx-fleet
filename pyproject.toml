@@ -1,7 +1,7 @@
 [project]
 name = "ledgerx_fleet"
 authors = [{ name = "LedgerX", email = "hello@ledgerx.local" }]
-description = "LedgerX Fleet Management - vehicles, drivers, maintenance, trips, rentals, GPS and accounting for ERPNext"
+description = "LedgerX Fleet Management - vehicles, drivers, maintenance, trips, rentals, GPS and accounting for LedgerX"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

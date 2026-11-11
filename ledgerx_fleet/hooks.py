@@ -3,7 +3,7 @@ from ledgerx_fleet import __version__ as app_version  # noqa: F401
 app_name = "ledgerx_fleet"
 app_title = "LedgerX Fleet"
 app_publisher = "LedgerX"
-app_description = "Fleet management for ERPNext: vehicles, drivers, documents, maintenance, trips, rentals, GPS and accounting"
+app_description = "Fleet management for LedgerX: vehicles, drivers, documents, maintenance, trips, rentals, GPS and accounting"
 app_email = "hello@ledgerx.local"
 app_license = "mit"
 

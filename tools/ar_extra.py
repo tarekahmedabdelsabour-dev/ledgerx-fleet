@@ -232,7 +232,7 @@ AR_EXTRA = {
 	"Create Rental Contract": "إنشاء عقد تأجير",
 	"Create Fleet Trip": "إنشاء رحلة نقل",
 	"Could not create the document": "تعذر إنشاء المستند",
-	"ERPNext is not integrated with the CRM": "نظام ERPNext غير مرتبط بإدارة العملاء",
+	"LedgerX is not integrated with the CRM": "نظام LedgerX غير مرتبط بإدارة العملاء",
 	"Could not create the customer": "تعذر إنشاء العميل",
 	"Traffic Fine Deduction": "خصم مخالفة مرورية",
 	"Driver Screen": "شاشة السائق",

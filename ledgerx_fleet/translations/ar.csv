@@ -152,7 +152,6 @@ Driver {0}: {1},السائق {0}: {1}
 Driving License,رخصة القيادة
 Due Date,تاريخ الاستحقاق
 Due Soon,يستحق قريباً
-ERPNext is not integrated with the CRM,نظام ERPNext غير مرتبط بإدارة العملاء
 Electric,كهربائي
 Electrical,كهرباء
 Employee,الموظف
@@ -288,6 +287,7 @@ Last Service Odometer,عداد آخر صيانة
 Last Work Order,آخر أمر شغل
 Latitude,خط العرض
 Leased,مؤجرة لنا (إيجار تمويلي)
+LedgerX is not integrated with the CRM,نظام LedgerX غير مرتبط بإدارة العملاء
 Life,العمر الافتراضي
 Light Truck,شاحنة خفيفة
 Litres,اللترات

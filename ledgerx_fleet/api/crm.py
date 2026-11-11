@@ -23,7 +23,7 @@ def customer_for_deal(deal):
 
 	settings = frappe.get_single("ERPNext CRM Settings")
 	if not settings.enabled:
-		frappe.throw(_("ERPNext is not integrated with the CRM"))
+		frappe.throw(_("LedgerX is not integrated with the CRM"))
 	customer = get_local_customer(deal)
 	if not customer:
 		customer = create_customer_from_deal(frappe.get_doc("CRM Deal", deal), settings)

@@ -1,8 +1,8 @@
 # LedgerX Fleet
 
-Complete fleet management for ERPNext / Frappe **v16** (Arabic + English), from a handful of cars to a
-multi-branch fleet. A separate Frappe app: it extends ERPNext's `Vehicle` and `Driver` with custom fields
-and does not touch ERPNext or HRMS code.
+Complete fleet management for LedgerX **v16** (Arabic + English), from a handful of cars to a
+multi-branch fleet. A separate Frappe app: it extends LedgerX's `Vehicle` and `Driver` with custom fields
+and does not touch the core or HR code.
 
 Requires: `erpnext`, `hrms` (version-16).
 
