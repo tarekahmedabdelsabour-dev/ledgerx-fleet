@@ -9,8 +9,8 @@
    "label": "Trips by Status"
   }
  ],
- "content": "[{\"id\": \"c34a420165\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Operations</b></span>\", \"col\": 12}}, {\"id\": \"a98ab04351\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trip Revenue per Month\", \"col\": 6}}, {\"id\": \"8be629c6ca\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trips by Status\", \"col\": 6}}, {\"id\": \"8a80c8443b\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Trips In Progress\", \"col\": 3}}, {\"id\": \"28c1aa59cc\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Active Rentals\", \"col\": 3}}, {\"id\": \"d9c274e929\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Unpaid Fines\", \"col\": 3}}, {\"id\": \"3c6c3afd07\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Incidents\", \"col\": 3}}, {\"id\": \"b1f0788c85\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Trip\", \"col\": 3}}, {\"id\": \"317cd6a14b\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rental Contract\", \"col\": 3}}, {\"id\": \"3b8b5b564e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Traffic Fine\", \"col\": 3}}, {\"id\": \"8250411227\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Incident\", \"col\": 3}}, {\"id\": \"c6066f7cb6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Odometer Log\", \"col\": 3}}, {\"id\": \"1200c379eb\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Expense\", \"col\": 3}}, {\"id\": \"1976e8d107\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Custody Entry\", \"col\": 3}}, {\"id\": \"969235beee\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Custody\", \"col\": 3}}, {\"id\": \"2d4696639d\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trip Profitability\", \"col\": 3}}]",
- "creation": "2026-11-11 06:23:52.607192",
+ "content": "[{\"id\": \"a490c6f716\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Operations</b></span>\", \"col\": 12}}, {\"id\": \"897e545990\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trip Revenue per Month\", \"col\": 6}}, {\"id\": \"15edfad07d\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Trips by Status\", \"col\": 6}}, {\"id\": \"188edbd88f\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Trips In Progress\", \"col\": 3}}, {\"id\": \"1d41802adc\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Active Rentals\", \"col\": 3}}, {\"id\": \"963196850c\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Unpaid Fines\", \"col\": 3}}, {\"id\": \"8cd6ecc942\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Incidents\", \"col\": 3}}, {\"id\": \"4ce929fb98\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Screen\", \"col\": 3}}, {\"id\": \"aef4e17414\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Trip\", \"col\": 3}}, {\"id\": \"b90c55e4aa\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rental Contract\", \"col\": 3}}, {\"id\": \"3db8e921b8\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Traffic Fine\", \"col\": 3}}, {\"id\": \"1396f350a3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Incident\", \"col\": 3}}, {\"id\": \"739a2a360d\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Odometer Log\", \"col\": 3}}, {\"id\": \"8768377c5a\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Expense\", \"col\": 3}}, {\"id\": \"e3427e72cc\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Custody Entry\", \"col\": 3}}, {\"id\": \"d12ec83dec\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Custody\", \"col\": 3}}, {\"id\": \"2572c8d08e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trip Profitability\", \"col\": 3}}]",
+ "creation": "2026-11-11 10:43:29.135145",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -21,7 +21,7 @@
  "is_hidden": 0,
  "label": "Fleet Operations",
  "links": [],
- "modified": "2026-11-11 06:23:52.607192",
+ "modified": "2026-11-11 10:43:29.135145",
  "modified_by": "Administrator",
  "module": "Fleet Operations",
  "name": "Fleet Operations",
@@ -50,6 +50,11 @@
  "roles": [],
  "sequence_id": 22.0,
  "shortcuts": [
+  {
+   "label": "Driver Screen",
+   "type": "URL",
+   "url": "/driver"
+  },
   {
    "doc_view": "List",
    "label": "Fleet Trip",

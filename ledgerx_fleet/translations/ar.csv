@@ -143,6 +143,7 @@ Driver Expense,مصروف سائق
 Driver Name,اسم السائق
 Driver Odometer Log,قراءة عداد السائق
 Driver Permit,تصريح السائق
+Driver Screen,شاشة السائق
 Driver custody {0} - {1} - {2},عهدة سائق {0} - {1} - {2}
 Driver expense {0},مصروف سائق {0}
 Driver expense {0} - {1} - {2},مصروف سائق {0} - {1} - {2}

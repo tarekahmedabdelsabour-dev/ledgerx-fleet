@@ -30,6 +30,7 @@ MODULES = [
 	], [("Item", "Item", "package"), ("Warehouse", "Warehouse", "warehouse"), ("Stock Entry", "Stock Entry", "arrow-right-left"),
 		("Supplier", "Supplier", "truck")]),
 	("Fleet Operations", "route", "route-soft", [
+		("Driver Screen", "/driver", "URL", "smartphone"),
 		("Fleet Trip", "Fleet Trip", "DocType", "route"), ("Rental Contract", "Rental Contract", "DocType", "key-round"),
 		("Traffic Fine", "Traffic Fine", "DocType", "triangle-alert"),
 		("Fleet Incident", "Fleet Incident", "DocType", "siren"),
@@ -71,6 +72,9 @@ def scrub(n):
 
 
 def item(label, link_to, link_type, icon="", child=0):
+	if link_type == "URL":
+		return {"child": child, "collapsible": 1, "icon": icon, "indent": 0, "keep_closed": 0, "label": label,
+			"url": link_to, "link_type": "URL", "show_arrow": 0, "type": "Link"}
 	return {"child": child, "collapsible": 1, "icon": icon, "indent": 0, "keep_closed": 0, "label": label,
 		"link_to": link_to, "link_type": link_type, "show_arrow": 0, "type": "Link"}
 
@@ -160,7 +164,9 @@ def main():
 		for label, target, kind, ic in items:
 			content.append({"id": uuid.uuid4().hex[:10], "type": "shortcut", "data": {"shortcut_name": label, "col": 3}})
 			sc = {"label": label, "link_to": target, "type": kind}
-			if kind == "DocType":
+			if kind == "URL":
+				sc = {"label": label, "url": target, "type": "URL"}
+			elif kind == "DocType":
 				sc["doc_view"] = "List"
 			else:
 				sc["report_ref_doctype"] = REPORT_DT[target]

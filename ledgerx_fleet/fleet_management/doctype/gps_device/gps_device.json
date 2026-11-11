@@ -1,6 +1,6 @@
 {
  "actions": [],
- "creation": "2026-11-11 06:23:52.567743",
+ "creation": "2026-11-11 10:43:29.083563",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -109,7 +109,7 @@
   }
  ],
  "links": [],
- "modified": "2026-11-11 06:23:52.567743",
+ "modified": "2026-11-11 10:43:29.083563",
  "modified_by": "Administrator",
  "module": "Fleet Management",
  "name": "GPS Device",

@@ -235,4 +235,5 @@ AR_EXTRA = {
 	"ERPNext is not integrated with the CRM": "نظام ERPNext غير مرتبط بإدارة العملاء",
 	"Could not create the customer": "تعذر إنشاء العميل",
 	"Traffic Fine Deduction": "خصم مخالفة مرورية",
+	"Driver Screen": "شاشة السائق",
 }
