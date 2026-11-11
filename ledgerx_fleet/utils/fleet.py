@@ -173,13 +173,14 @@ def _is_pl(account):
 	return frappe.db.get_value("Account", account, "report_type") == "Profit and Loss"
 
 
-def post_journal_entry(doc, debit_account, amount, remark, posting_date=None):
-	"""Dr expense / Cr accrual account, tagged with the cost center. Returns the Journal Entry name or None."""
+def post_journal_entry(doc, debit_account, amount, remark, posting_date=None, credit_account=None):
+	"""Dr debit_account / Cr credit_account (default: the accrual account), tagged with the cost center on
+	profit-and-loss accounts. Returns the Journal Entry name, or None when automatic posting is off."""
 	settings = get_settings()
 	amount = flt(amount)
 	if not settings.post_journal_entries or amount <= 0:
 		return None
-	credit = settings.accrual_account
+	credit = credit_account or settings.accrual_account
 	if not debit_account or not credit:
 		frappe.throw(
 			_("Set the expense accounts and the credit account in Fleet Settings, or switch off automatic posting."),

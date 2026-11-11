@@ -56,7 +56,7 @@ def _save_photo(doc, fieldname, data_url, required=False, set_field=True):
 
 
 def _summary(driver_name):
-	entries = frappe.get_all("Driver Custody Entry", filters={"driver": driver_name}, fields=["entry_type", "amount"])
+	entries = frappe.get_all("Driver Custody Entry", filters={"driver": driver_name, "docstatus": 1}, fields=["entry_type", "amount"])
 	exps = frappe.get_all("Driver Expense", filters={"driver": driver_name}, fields=["paid_from", "status", "amount"])
 	return logic.custody_summary([(e.entry_type, e.amount) for e in entries], [(e.paid_from, e.status, e.amount) for e in exps])
 
@@ -74,7 +74,7 @@ def me():
 	info = frappe.db.get_value("Vehicle", vehicle, ["license_plate", "make", "model", "last_odometer"], as_dict=True) if vehicle else None
 	expenses = frappe.get_all("Driver Expense", filters={"driver": d.name}, limit=15, order_by="creation desc",
 		fields=["name", "expense_date", "category", "amount", "paid_from", "status", "rejection_reason"])
-	entries = frappe.get_all("Driver Custody Entry", filters={"driver": d.name}, limit=10, order_by="creation desc",
+	entries = frappe.get_all("Driver Custody Entry", filters={"driver": d.name, "docstatus": 1}, limit=10, order_by="creation desc",
 		fields=["posting_date", "entry_type", "amount", "reference"])
 	return {
 		"driver": d.name, "driver_name": d.full_name, "vehicle": vehicle, "vehicle_info": info,

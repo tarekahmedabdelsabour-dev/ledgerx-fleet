@@ -57,6 +57,12 @@ DOCTYPES.append(dict(
 		F("fuel_expense_account", "Link", "Fuel Expense Account", options="Account", depends_on="post_journal_entries"),
 		F("maintenance_expense_account", "Link", "Maintenance Expense Account", options="Account", depends_on="post_journal_entries"),
 		F("fine_expense_account", "Link", "Fines Expense Account", options="Account", depends_on="post_journal_entries"),
+		F("other_expense_account", "Link", "Other Fleet Expenses Account", options="Account", depends_on="post_journal_entries",
+			description="Tolls, parking, washing and other driver expenses."),
+		F("custody_account", "Link", "Driver Custody Account", options="Account", depends_on="post_journal_entries",
+			description="Asset account holding the cash that drivers carry (e.g. Employee Advances)."),
+		F("cash_account", "Link", "Cash / Bank Account for Custody", options="Account", depends_on="post_journal_entries",
+			description="Cash or bank account the custody is paid from and returned to."),
 		S("Stock and Billing"),
 		F("issue_parts_from_stock", "Check", "Issue Spare Parts from Stock"),
 		F("default_warehouse", "Link", "Default Parts Warehouse", options="Warehouse", depends_on="issue_parts_from_stock"),
@@ -384,6 +390,8 @@ DOCTYPES.append(dict(
 		COST_CENTER(),
 		C(),
 		F("journal_entry", "Link", "Journal Entry", options="Journal Entry", read_only=1, no_copy=1),
+		F("driver_expense", "Link", "Driver Expense", options="Driver Expense", read_only=1, no_copy=1,
+			description="Set when this log came from an approved driver expense; that expense posts the accounting entry."),
 		F("amended_from", "Link", "Amended From", options="Fuel Log", read_only=1, no_copy=1, print_hide=1),
 	],
 ))
@@ -447,6 +455,8 @@ DOCTYPES.append(dict(
 		COST_CENTER(),
 		C(),
 		F("sales_invoice", "Link", "Sales Invoice", options="Sales Invoice", read_only=1, no_copy=1),
+		F("crm_deal", "Data", "CRM Deal", read_only=1, no_copy=1,
+			description="The CRM deal this was created from."),
 		F("amended_from", "Link", "Amended From", options="Fleet Trip", read_only=1, no_copy=1, print_hide=1),
 	],
 ))
@@ -585,6 +595,8 @@ DOCTYPES.append(dict(
 		COST_CENTER(),
 		C(),
 		F("sales_invoice", "Link", "Sales Invoice", options="Sales Invoice", read_only=1, no_copy=1),
+		F("crm_deal", "Data", "CRM Deal", read_only=1, no_copy=1,
+			description="The CRM deal this was created from."),
 		F("amended_from", "Link", "Amended From", options="Rental Contract", read_only=1, no_copy=1, print_hide=1),
 	],
 ))
@@ -643,12 +655,14 @@ DOCTYPES.append(dict(
 		S("Accounting", collapsible=1),
 		COMPANY(),
 		COST_CENTER(),
+		C(),
+		F("journal_entry", "Link", "Journal Entry", options="Journal Entry", read_only=1, no_copy=1),
 	],
 ))
 
 DOCTYPES.append(dict(
 	name="Driver Custody Entry", autoname="format:CUS-{YYYY}-{#####}", title_field="driver", icon="fa fa-briefcase",
-	search_fields="driver,entry_type,reference", perms="ops_nosubmit",
+	search_fields="driver,entry_type,reference", perms="ops", submittable=True,
 	fields=[
 		F("driver", "Link", "Driver", options="Driver", reqd=1, in_list_view=1, in_standard_filter=1),
 		F("posting_date", "Date", "Date", reqd=1, default="Today", in_list_view=1),
@@ -663,6 +677,9 @@ DOCTYPES.append(dict(
 		S("Accounting", collapsible=1),
 		COMPANY(),
 		COST_CENTER(),
+		C(),
+		F("journal_entry", "Link", "Journal Entry", options="Journal Entry", read_only=1, no_copy=1),
+		F("amended_from", "Link", "Amended From", options="Driver Custody Entry", read_only=1, no_copy=1, print_hide=1),
 	],
 ))
 

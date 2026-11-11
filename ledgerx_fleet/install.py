@@ -81,6 +81,8 @@ def after_install():
 	_run(ensure_roles)
 	_run(ensure_custom_fields)
 	_run(seed_defaults)
+	_run(ensure_fine_component)
+	_run(ensure_crm_link)
 	frappe.clear_cache()
 
 
@@ -88,6 +90,8 @@ def after_migrate():
 	_run(ensure_modules)
 	_run(ensure_roles)
 	_run(ensure_custom_fields)
+	_run(ensure_fine_component)
+	_run(ensure_crm_link)
 	frappe.clear_cache()
 
 
@@ -121,6 +125,24 @@ def ensure_roles():
 
 def ensure_custom_fields():
 	create_custom_fields({"Vehicle": VEHICLE_FIELDS, "Driver": DRIVER_FIELDS}, update=True)
+
+
+def ensure_crm_link():
+	from ledgerx_fleet.integrations.crm import ensure_crm_link as run
+
+	run()
+
+
+def ensure_fine_component():
+	"""HR link: a Salary Component for traffic-fine deductions, so Additional Salary can be created."""
+	name = "Traffic Fine Deduction"
+	if not frappe.db.exists("Salary Component", name):
+		frappe.get_doc(
+			{"doctype": "Salary Component", "salary_component": name, "salary_component_abbr": "TFD",
+				"type": "Deduction"}
+		).insert(ignore_permissions=True)
+	if not frappe.db.get_single_value("Fleet Settings", "fine_salary_component"):
+		frappe.db.set_single_value("Fleet Settings", "fine_salary_component", name)
 
 
 def seed_defaults():

@@ -21,7 +21,10 @@ from ar import AR  # noqa: E402
 APP = "ledgerx_fleet"
 MODULE = "Fleet Management"
 MODULE_DIR = os.path.join(ROOT, APP, "fleet_management")
-STAMP = "2026-11-09 06:00:00.000000"
+from datetime import datetime  # noqa: E402
+
+# Must be newer than what the site already has, or `bench migrate` skips the changed file.
+STAMP = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
 
 SECTIONING = ("Section Break", "Column Break", "Tab Break")
 

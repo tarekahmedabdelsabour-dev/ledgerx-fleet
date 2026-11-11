@@ -19,7 +19,7 @@ def execute(filters=None):
 	dfilter = {"name": filters.driver} if filters.get("driver") else {}
 	drivers = frappe.get_all("Driver", filters=dfilter, fields=["name", "full_name"])
 	entries, expenses = {}, {}
-	for e in frappe.get_all("Driver Custody Entry", fields=["driver", "entry_type", "amount"]):
+	for e in frappe.get_all("Driver Custody Entry", filters={"docstatus": 1}, fields=["driver", "entry_type", "amount"]):
 		entries.setdefault(e.driver, []).append((e.entry_type, e.amount))
 	for x in frappe.get_all("Driver Expense", fields=["driver", "paid_from", "status", "amount"]):
 		expenses.setdefault(x.driver, []).append((x.paid_from, x.status, x.amount))

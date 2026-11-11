@@ -1,6 +1,6 @@
 {
  "actions": [],
- "creation": "2026-11-09 06:00:00.000000",
+ "creation": "2026-11-11 06:23:52.567743",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -24,6 +24,9 @@
   "fuel_expense_account",
   "maintenance_expense_account",
   "fine_expense_account",
+  "other_expense_account",
+  "custody_account",
+  "cash_account",
   "section_break_4",
   "issue_parts_from_stock",
   "default_warehouse",
@@ -156,6 +159,30 @@
    "depends_on": "post_journal_entries"
   },
   {
+   "fieldname": "other_expense_account",
+   "fieldtype": "Link",
+   "label": "Other Fleet Expenses Account",
+   "options": "Account",
+   "depends_on": "post_journal_entries",
+   "description": "Tolls, parking, washing and other driver expenses."
+  },
+  {
+   "fieldname": "custody_account",
+   "fieldtype": "Link",
+   "label": "Driver Custody Account",
+   "options": "Account",
+   "depends_on": "post_journal_entries",
+   "description": "Asset account holding the cash that drivers carry (e.g. Employee Advances)."
+  },
+  {
+   "fieldname": "cash_account",
+   "fieldtype": "Link",
+   "label": "Cash / Bank Account for Custody",
+   "options": "Account",
+   "depends_on": "post_journal_entries",
+   "description": "Cash or bank account the custody is paid from and returned to."
+  },
+  {
    "fieldname": "section_break_4",
    "fieldtype": "Section Break",
    "label": "Stock and Billing"
@@ -217,7 +244,7 @@
   }
  ],
  "links": [],
- "modified": "2026-11-09 06:00:00.000000",
+ "modified": "2026-11-11 06:23:52.567743",
  "modified_by": "Administrator",
  "module": "Fleet Management",
  "name": "Fleet Settings",

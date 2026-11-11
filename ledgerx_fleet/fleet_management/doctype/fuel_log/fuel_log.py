@@ -65,6 +65,8 @@ class FuelLog(Document):
 
 	def on_submit(self):
 		fleet.update_vehicle_odometer(self.vehicle, self.odometer)
+		if self.driver_expense:
+			return  # the approved Driver Expense already posted the accounting entry
 		s = fleet.get_settings()
 		je = fleet.post_journal_entry(
 			self, s.fuel_expense_account, self.amount, _("Fuel {0} - {1}").format(self.name, self.vehicle),

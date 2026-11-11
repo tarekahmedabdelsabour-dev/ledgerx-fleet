@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "amount",
- "creation": "2026-11-10 12:27:51.322461",
+ "creation": "2026-11-11 06:23:52.607192",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "Fuel Log",
@@ -10,7 +10,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Fuel Cost This Month",
- "modified": "2026-11-10 12:27:51.322461",
+ "modified": "2026-11-11 06:23:52.607192",
  "modified_by": "Administrator",
  "module": "Fleet Management",
  "name": "Fuel Cost This Month",

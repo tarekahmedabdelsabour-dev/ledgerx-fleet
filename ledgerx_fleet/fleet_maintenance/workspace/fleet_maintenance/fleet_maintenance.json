@@ -9,8 +9,8 @@
    "label": "Fuel Cost per Month"
   }
  ],
- "content": "[{\"id\": \"05a8807fe3\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Maintenance</b></span>\", \"col\": 12}}, {\"id\": \"3d233b1d8a\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Maintenance Cost per Month\", \"col\": 6}}, {\"id\": \"af4e16a66d\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Fuel Cost per Month\", \"col\": 6}}, {\"id\": \"3712f8e637\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Services\", \"col\": 3}}, {\"id\": \"9af3548187\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Services Due Soon\", \"col\": 3}}, {\"id\": \"d9a6f7f9ee\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Work Orders\", \"col\": 3}}, {\"id\": \"475ea5c5c5\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Fuel Cost This Month\", \"col\": 3}}, {\"id\": \"9d77d393a3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Service Plan\", \"col\": 3}}, {\"id\": \"00a487d41d\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Service Schedule\", \"col\": 3}}, {\"id\": \"02f0a593a3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Work Order\", \"col\": 3}}, {\"id\": \"823e8e08c5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fuel Log\", \"col\": 3}}, {\"id\": \"0c4a7951c3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Due\", \"col\": 3}}, {\"id\": \"1b12eff39b\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fuel Consumption\", \"col\": 3}}]",
- "creation": "2026-11-10 12:27:51.322461",
+ "content": "[{\"id\": \"3ccb3956f1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Fleet Maintenance</b></span>\", \"col\": 12}}, {\"id\": \"e32bea0b05\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Maintenance Cost per Month\", \"col\": 6}}, {\"id\": \"b9db687f0f\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Fuel Cost per Month\", \"col\": 6}}, {\"id\": \"0049d56dbe\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Services\", \"col\": 3}}, {\"id\": \"fa05670c05\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Services Due Soon\", \"col\": 3}}, {\"id\": \"95ef2e2977\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Work Orders\", \"col\": 3}}, {\"id\": \"e5e083d07a\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Fuel Cost This Month\", \"col\": 3}}, {\"id\": \"ddf5a61907\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Service Plan\", \"col\": 3}}, {\"id\": \"795bb27502\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Service Schedule\", \"col\": 3}}, {\"id\": \"39322fb239\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fleet Work Order\", \"col\": 3}}, {\"id\": \"c94f25fb03\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fuel Log\", \"col\": 3}}, {\"id\": \"853a0c2cda\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Due\", \"col\": 3}}, {\"id\": \"a308ba03b6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fuel Consumption\", \"col\": 3}}]",
+ "creation": "2026-11-11 06:23:52.607192",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -21,7 +21,7 @@
  "is_hidden": 0,
  "label": "Fleet Maintenance",
  "links": [],
- "modified": "2026-11-10 12:27:51.322461",
+ "modified": "2026-11-11 06:23:52.607192",
  "modified_by": "Administrator",
  "module": "Fleet Maintenance",
  "name": "Fleet Maintenance",

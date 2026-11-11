@@ -30,6 +30,7 @@ Apply Plan,تطبيق الخطة
 Apply to Vehicle,تطبيق على مركبة
 Approved,معتمد
 Approved Amount,المبلغ المعتمد
+Asset account holding the cash that drivers carry (e.g. Employee Advances).,حساب أصول يمثل النقدية مع السائقين (مثل سلف الموظفين).
 At most {0} positions per request,الحد الأقصى {0} موقع في الطلب الواحد
 Attachment,مرفق
 Attachments,المرفقات
@@ -41,6 +42,7 @@ Brand,الماركة
 Breakdown,عطل
 Bus,حافلة
 CNG,غاز طبيعي
+CRM Deal,صفقة CRM
 Cancel Additional Salary {0} first,ألغِ الراتب الإضافي {0} أولاً
 Cancel Sales Invoice {0} first,ألغِ فاتورة المبيعات {0} أولاً
 Cancelled,ملغي
@@ -53,6 +55,8 @@ Cargo Description,وصف الحمولة
 Cargo Weight (kg),وزن الحمولة (كجم)
 Cargo weight {0} kg exceeds the vehicle payload of {1} kg,وزن الحمولة {0} كجم يتجاوز حمولة المركبة {1} كجم
 Cash,نقدي
+Cash / Bank Account for Custody,حساب النقدية / البنك للعهدة
+Cash or bank account the custody is paid from and returned to.,حساب النقدية أو البنك الذي تُصرف منه العهدة وتعود إليه.
 Category,الفئة
 Charges,الرسوم
 Chauffeur (optional),سائق مرافق (اختياري)
@@ -75,7 +79,11 @@ Cost,التكلفة
 Cost Center,مركز التكلفة
 Cost per km,التكلفة لكل كم
 Costs,التكاليف
+Could not create the customer,تعذر إنشاء العميل
+Could not create the document,تعذر إنشاء المستند
 Create,إنشاء
+Create Fleet Trip,إنشاء رحلة نقل
+Create Rental Contract,إنشاء عقد تأجير
 Create Work Order,إنشاء أمر شغل
 Credit,آجل
 Credit (Accrual / Cash) Account,حساب الدائن (استحقاق / نقدية)
@@ -129,17 +137,21 @@ Done,تم
 Driver,السائق
 Driver Allowance,بدل السائق
 Driver Custody,عهدة السائقين
+Driver Custody Account,حساب عهدة السائقين
 Driver Custody Entry,حركة عهدة سائق
 Driver Expense,مصروف سائق
 Driver Name,اسم السائق
 Driver Odometer Log,قراءة عداد السائق
 Driver Permit,تصريح السائق
+Driver custody {0} - {1} - {2},عهدة سائق {0} - {1} - {2}
 Driver expense {0},مصروف سائق {0}
+Driver expense {0} - {1} - {2},مصروف سائق {0} - {1} - {2}
 Driver {0} is already on trip {1},السائق {0} في رحلة بالفعل {1}
 Driver {0}: {1},السائق {0}: {1}
 Driving License,رخصة القيادة
 Due Date,تاريخ الاستحقاق
 Due Soon,يستحق قريباً
+ERPNext is not integrated with the CRM,نظام ERPNext غير مرتبط بإدارة العملاء
 Electric,كهربائي
 Electrical,كهرباء
 Employee,الموظف
@@ -331,6 +343,7 @@ Operations,التشغيل
 Origin,نقطة الانطلاق
 Other,أخرى
 Other Cost,تكاليف أخرى
+Other Fleet Expenses Account,حساب مصروفات الأسطول الأخرى
 Our Driver,سائقنا
 Out of Service,خارج الخدمة
 Overdue,متأخر
@@ -386,6 +399,7 @@ Receipt Photo,صورة الإيصال
 Record the start of day first,سجّل بداية اليوم أولًا
 Reference,المرجع
 Reimbursement,رد مصروفات
+Reject this expense first so its journal entry is cancelled,ارفض هذا المصروف أولًا ليُلغى قيده المحاسبي
 Rejected,مرفوض
 Rejection Reason,سبب الرفض
 Related,مرتبط
@@ -442,7 +456,9 @@ Set 'Item for Trip Invoices' in Fleet Settings,حدد 'صنف فواتير ال�
 Set 'Salary Component for Fine Deductions' in Fleet Settings,حدد 'بند الراتب لخصم المخالفات' في إعدادات الأسطول
 Set an interval in km or days,حدد فترة بالكيلومتر أو الأيام
 Set the credit account to post journal entries automatically.,حدد حساب الدائن لترحيل القيود تلقائياً.
+"Set the custody, cash and credit accounts in Fleet Settings, or switch off automatic posting.",حدّد حسابات العهدة والنقدية والدائن في إعدادات الأسطول، أو أوقف الترحيل التلقائي.
 "Set the expense accounts and the credit account in Fleet Settings, or switch off automatic posting.",حدد حسابات المصروفات وحساب الدائن في إعدادات الأسطول، أو أوقف الترحيل التلقائي.
+Set when this log came from an approved driver expense; that expense posts the accounting entry.,يُحدد عندما يأتي السجل من مصروف سائق معتمد؛ ذلك المصروف هو الذي يسجل القيد المحاسبي.
 Setup,الإعداد
 Severe,جسيم
 Severity,الخطورة
@@ -479,6 +495,7 @@ Tasks,المهام
 Technical Inspection,الفحص الفني
 Terms,الشروط
 Terms and Conditions,الشروط والأحكام
+The CRM deal this was created from.,صفقة CRM التي أُنشئ منها هذا السجل.
 The driver must be linked to an Employee to deduct from salary,يجب ربط السائق بموظف للخصم من الراتب
 Theft,سرقة
 Third Party,طرف ثالث
@@ -492,11 +509,13 @@ To,إلى
 To Date,إلى تاريخ
 To Date cannot be before From Date,تاريخ النهاية لا يمكن أن يسبق تاريخ البداية
 Toll,رسوم طريق
+"Tolls, parking, washing and other driver expenses.",رسوم الطريق والانتظار والغسيل ومصروفات السائقين الأخرى.
 Total Cost,إجمالي التكلفة
 Total Expenses,إجمالي المصروفات
 Total Loss,هلاك كلي
 Tracking,التتبع
 Traffic Fine,مخالفة مرورية
+Traffic Fine Deduction,خصم مخالفة مرورية
 Traffic fine {0} - {1},مخالفة مرورية {0} - {1}
 Trailer,مقطورة
 Trailer must be a different vehicle,يجب أن تكون المقطورة مركبة مختلفة

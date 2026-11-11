@@ -1,6 +1,6 @@
 {
  "actions": [],
- "creation": "2026-11-09 06:00:00.000000",
+ "creation": "2026-11-11 06:23:52.567743",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -30,6 +30,7 @@
   "cost_center",
   "column_break_3",
   "sales_invoice",
+  "crm_deal",
   "amended_from"
  ],
  "fields": [
@@ -198,6 +199,14 @@
    "no_copy": 1
   },
   {
+   "fieldname": "crm_deal",
+   "fieldtype": "Data",
+   "label": "CRM Deal",
+   "read_only": 1,
+   "no_copy": 1,
+   "description": "The CRM deal this was created from."
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -208,7 +217,7 @@
   }
  ],
  "links": [],
- "modified": "2026-11-09 06:00:00.000000",
+ "modified": "2026-11-11 06:23:52.567743",
  "modified_by": "Administrator",
  "module": "Fleet Management",
  "name": "Rental Contract",
