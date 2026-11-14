@@ -40,6 +40,9 @@ scheduler_events = {
 	"daily": [
 		"ledgerx_fleet.tasks.daily",
 	],
+	"cron": {
+		"0 4 1 * *": ["ledgerx_fleet.utils.hr_link.monthly_incentives"],
+	},
 	"daily_long": [
 		"ledgerx_fleet.tasks.daily_long",
 	],

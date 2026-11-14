@@ -82,6 +82,7 @@ def after_install():
 	_run(ensure_custom_fields)
 	_run(seed_defaults)
 	_run(ensure_fine_component)
+	_run(ensure_incentive_component)
 	_run(ensure_crm_link)
 	frappe.clear_cache()
 
@@ -91,6 +92,7 @@ def after_migrate():
 	_run(ensure_roles)
 	_run(ensure_custom_fields)
 	_run(ensure_fine_component)
+	_run(ensure_incentive_component)
 	_run(ensure_crm_link)
 	frappe.clear_cache()
 
@@ -143,6 +145,18 @@ def ensure_fine_component():
 		).insert(ignore_permissions=True)
 	if not frappe.db.get_single_value("Fleet Settings", "fine_salary_component"):
 		frappe.db.set_single_value("Fleet Settings", "fine_salary_component", name)
+
+
+def ensure_incentive_component():
+	"""HR link: a Salary Component for the per-kilometre driver incentive."""
+	name = "Driver Incentive"
+	if not frappe.db.exists("Salary Component", name):
+		frappe.get_doc(
+			{"doctype": "Salary Component", "salary_component": name, "salary_component_abbr": "DINC",
+				"type": "Earning"}
+		).insert(ignore_permissions=True)
+	if not frappe.db.get_single_value("Fleet Settings", "driver_incentive_component"):
+		frappe.db.set_single_value("Fleet Settings", "driver_incentive_component", name)
 
 
 def seed_defaults():

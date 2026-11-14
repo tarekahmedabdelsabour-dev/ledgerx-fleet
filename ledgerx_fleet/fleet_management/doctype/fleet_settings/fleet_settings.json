@@ -37,7 +37,11 @@
   "section_break_5",
   "gps_log_retention_days",
   "column_break_5",
-  "gps_api_token"
+  "gps_api_token",
+  "section_break_6",
+  "driver_incentive_component",
+  "column_break_6",
+  "incentive_per_km"
  ],
  "fields": [
   {
@@ -241,6 +245,27 @@
    "fieldtype": "Password",
    "label": "GPS API Token",
    "description": "Devices or your tracking platform send this token to /api/method/ledgerx_fleet.api.gps.ingest"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "HR Incentives"
+  },
+  {
+   "fieldname": "driver_incentive_component",
+   "fieldtype": "Link",
+   "label": "Salary Component for Driver Incentive",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "incentive_per_km",
+   "fieldtype": "Currency",
+   "label": "Incentive per Kilometre",
+   "description": "Paid to drivers for the kilometres recorded at end of day. Leave 0 for no incentive."
   }
  ],
  "links": [],

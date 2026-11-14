@@ -8,9 +8,9 @@ import re
 
 import frappe
 from frappe import _
-from frappe.utils import cint, flt, getdate, nowdate, now_datetime
+from frappe.utils import cint, flt, get_first_day, getdate, nowdate, now_datetime
 
-from ledgerx_fleet.utils import logic
+from ledgerx_fleet.utils import hr_link, logic
 
 MAX_PHOTO_BYTES = 3 * 1024 * 1024
 DATA_URL = re.compile(r"^data:image/(jpeg|jpg|png|webp);base64,(.+)$", re.S)
@@ -23,6 +23,19 @@ def _driver():
 	if not name:
 		frappe.throw(_("Your user is not linked to an active driver. Ask the fleet manager."), frappe.PermissionError)
 	return frappe.get_doc("Driver", name)
+
+
+def _incentive(driver):
+	"""This month's kilometres and the incentive they earn (None when no rate is set)."""
+	try:
+		rate, component = hr_link.incentive_rate()
+		if rate <= 0 or not component:
+			return None
+		today = getdate(nowdate())
+		km = hr_link.month_km(driver.name, get_first_day(today), today)
+		return {"km": km, "rate": rate, "amount": round(km * rate, 2)}
+	except Exception:
+		return None
 
 
 def _other_screen():
@@ -101,6 +114,7 @@ def me():
 		"custody": _summary(d.name), "expenses": expenses, "custody_entries": entries,
 		"currency": frappe.db.get_default("currency") or "EGP",
 		"switch": _other_screen(),
+		"incentive": _incentive(d),
 	}
 
 
@@ -124,6 +138,7 @@ def log_odometer(log_type, odometer, photo=None, latitude=None, longitude=None, 
 	})
 	doc.insert(ignore_permissions=True)
 	_save_photo(doc, "photo", photo, required=True)
+	hr_link.on_day_event(d, log_type, doc)
 	return {"name": doc.name, "day_distance": doc.day_distance}
 
 

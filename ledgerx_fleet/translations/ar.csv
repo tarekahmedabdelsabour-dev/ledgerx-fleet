@@ -578,3 +578,12 @@ Your user is not linked to an active driver. Ask the fleet manager.,حسابك �
 {0} {1} is already assigned in {2},{0} {1} مُسلَّم بالفعل في {2}
 "Salesman Screen","شاشة المندوب"
 "Driver Screen","شاشة السائق"
+HR Incentives,حوافز الموارد البشرية
+Salary Component for Driver Incentive,مكوّن الراتب لحافز السائق
+Incentive per Kilometre,الحافز لكل كيلومتر
+Paid to drivers for the kilometres recorded at end of day. Leave 0 for no incentive.,يُدفع للسائقين عن الكيلومترات المسجلة في نهاية اليوم. اتركه 0 لعدم وجود حافز.
+Create Driver Incentives,إنشاء حوافز السائقين
+Driver Incentives,حوافز السائقين
+HR,الموارد البشرية
+Set the incentive per kilometre and its salary component in Fleet Settings first,حدد الحافز لكل كيلومتر ومكوّن الراتب في إعدادات الأسطول أولاً
+"{0} draft Additional Salary created for HR review","تم إنشاء {0} راتب إضافي مسودة لمراجعة الموارد البشرية"

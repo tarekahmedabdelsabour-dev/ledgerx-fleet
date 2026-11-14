@@ -25,3 +25,15 @@ def generate_gps_token():
 	doc.gps_api_token = token
 	doc.save(ignore_permissions=True)
 	return token
+
+
+@frappe.whitelist()
+def create_driver_incentives(from_date, to_date):
+	"""HR link: draft Additional Salary for each driver's kilometres in the period."""
+	frappe.only_for(("Fleet Manager", "HR Manager", "System Manager"))
+	from ledgerx_fleet.utils import hr_link
+
+	rate, component = hr_link.incentive_rate()
+	if rate <= 0 or not component:
+		frappe.throw(_("Set the incentive per kilometre and its salary component in Fleet Settings first"))
+	return hr_link.create_incentives(from_date, to_date)
