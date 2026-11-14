@@ -25,6 +25,16 @@ def _driver():
 	return frappe.get_doc("Driver", name)
 
 
+def _other_screen():
+	"""Link to the salesman screen when the same user is also an active salesman (None otherwise)."""
+	try:
+		if frappe.db.exists("Salesman", {"user": frappe.session.user, "status": "Active"}):
+			return {"url": "/salesman", "label": _("Salesman Screen")}
+	except Exception:
+		pass
+	return None
+
+
 def _vehicle_of(driver):
 	v = frappe.db.get_value("Fleet Assignment", {"driver": driver.name, "status": "Active"}, "vehicle",
 		order_by="from_date desc")
@@ -81,6 +91,7 @@ def me():
 		"today": today, "start": logs.get("Start of Day"), "end": logs.get("End of Day"),
 		"custody": _summary(d.name), "expenses": expenses, "custody_entries": entries,
 		"currency": frappe.db.get_default("currency") or "EGP",
+		"switch": _other_screen(),
 	}
 
 

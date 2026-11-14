@@ -36,6 +36,7 @@ body{background:var(--bg,#f4f6f8)}
  <div class="bar"><button class="big" id="cam-snap" type="button">التقاط</button><button class="big alt" id="cam-x" type="button">إلغاء</button></div></div>
  <h1 id="hello">...</h1>
  <div class="mute" id="veh"></div>
+ <a id="sw" style="display:none;text-decoration:none;text-align:center;margin:6px 0;padding:14px;border-radius:12px;background:var(--brand);color:#fff;font-size:16px"></a>
  <div id="top" class="msg"></div>
 
  <div class="card" id="custody">
@@ -166,6 +167,7 @@ body{background:var(--bg,#f4f6f8)}
  $("e-cat").addEventListener("change",function(){$("e-fuel").style.display=this.value==="Fuel"?"block":"none"});
  function render(){
   $("hello").textContent="أهلاً "+ME.driver_name;
+  var sw=$("sw");if(ME.switch){sw.href=ME.switch.url;sw.textContent="⇄ "+ME.switch.label;sw.style.display="block"}else{sw.style.display="none"}
   var v=ME.vehicle_info;$("veh").textContent=v?("سيارتك: "+ME.vehicle+" - "+(v.make||"")+" "+(v.model||"")+" - آخر عداد "+(v.last_odometer||0)+" كم"):"لا توجد سيارة مسندة إليك حالياً";
   var c=ME.custody;$("bal").textContent=money(c.custody_balance);$("bal").className=c.custody_balance<0?"neg":"";
   $("owed").textContent=money(c.owed_to_driver);$("adv").textContent=money(c.advances-c.returns);$("spent").textContent=money(c.spent);
