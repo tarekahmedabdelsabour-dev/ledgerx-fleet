@@ -38,7 +38,16 @@ def _other_screen():
 def _vehicle_of(driver):
 	v = frappe.db.get_value("Fleet Assignment", {"driver": driver.name, "status": "Active"}, "vehicle",
 		order_by="from_date desc")
-	return v or driver.get("current_vehicle")
+	if v or driver.get("current_vehicle"):
+		return v or driver.get("current_vehicle")
+	# A user who is also a salesman: use the vehicle on the salesman card (no Fleet Assignment needed).
+	try:
+		user = driver.get("user")
+		if user:
+			return frappe.db.get_value("Salesman", {"user": user, "status": "Active"}, "vehicle") or None
+	except Exception:
+		pass
+	return None
 
 
 def _save_photo(doc, fieldname, data_url, required=False, set_field=True):
