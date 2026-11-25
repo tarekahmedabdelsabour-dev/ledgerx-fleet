@@ -290,5 +290,6 @@
  "sort_order": "DESC",
  "states": [],
  "icon": "fa fa-cog",
- "issingle": 1
+ "issingle": 1,
+ "track_changes": 1
 }
