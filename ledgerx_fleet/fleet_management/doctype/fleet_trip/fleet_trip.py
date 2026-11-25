@@ -77,7 +77,7 @@ class FleetTrip(Document):
 		fleet.set_vehicle_status(self.vehicle, "Active", only_if=("On Trip",))
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def set_trip_status(name, status):
 	"""Planned -> Dispatched -> In Transit (the trip is completed by submitting it)."""
 	doc = frappe.get_doc("Fleet Trip", name)
@@ -100,7 +100,7 @@ def set_trip_status(name, status):
 	return doc.status
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def make_sales_invoice(name):
 	doc = frappe.get_doc("Fleet Trip", name)
 	doc.check_permission("read")

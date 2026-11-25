@@ -64,7 +64,7 @@ def _contract(name, status_in):
 	return doc
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def hand_over(name):
 	doc = _contract(name, ("Reserved",))
 	for r in doc.vehicles:
@@ -76,7 +76,7 @@ def hand_over(name):
 	return "Active"
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def return_vehicles(name, actual_return, in_odometers, damage_charges=0, discount=0):
 	"""in_odometers: JSON {child row name: odometer in}."""
 	doc = _contract(name, ("Active", "Overdue"))
@@ -114,7 +114,7 @@ def return_vehicles(name, actual_return, in_odometers, damage_charges=0, discoun
 	return doc.grand_total
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def make_sales_invoice(name):
 	doc = _contract(name, ("Returned",))
 	frappe.has_permission("Sales Invoice", "create", throw=True)

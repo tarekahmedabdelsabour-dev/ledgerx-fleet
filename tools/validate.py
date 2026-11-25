@@ -175,7 +175,7 @@ def check_whitelisted_refs():
 	prefix = re.search(r'const RC = "([^"]+)"', js).group(1)
 	for m in re.findall(r"RC \+ \"(\w+)\"", js):
 		src = open(os.path.join(DT_DIR, "rental_contract", "rental_contract.py"), encoding="utf-8").read()
-		if not re.search(rf"@frappe.whitelist\(\)\ndef {m}\(", src):
+		if not re.search(rf"@frappe.whitelist\((?:methods=\[\"POST\"\])?\)\ndef {m}\(", src):
 			err(f"rental_contract.js: {m} not whitelisted")
 	if not os.path.isfile(os.path.join(ROOT, *prefix.rstrip(".").split(".")) + ".py"):
 		err(f"rental_contract.js prefix wrong: {prefix}")

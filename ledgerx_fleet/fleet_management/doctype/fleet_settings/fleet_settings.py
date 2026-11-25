@@ -17,7 +17,7 @@ class FleetSettings(Document):
 		frappe.clear_cache(doctype="Fleet Settings")
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def generate_gps_token():
 	frappe.only_for(("System Manager", "Fleet Manager"))
 	token = secrets.token_urlsafe(32)
@@ -27,7 +27,7 @@ def generate_gps_token():
 	return token
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def create_driver_incentives(from_date, to_date):
 	"""HR link: draft Additional Salary for each driver's kilometres in the period."""
 	frappe.only_for(("Fleet Manager", "HR Manager", "System Manager"))

@@ -44,7 +44,7 @@ def apply_plan(plan, vehicle):
 	return created
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def apply_plan_to_vehicle(plan, vehicle):
 	frappe.has_permission("Service Schedule", "create", throw=True)
 	return apply_plan(plan, vehicle)
