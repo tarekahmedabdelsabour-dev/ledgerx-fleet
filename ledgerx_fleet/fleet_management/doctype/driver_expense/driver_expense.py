@@ -30,6 +30,8 @@ class DriverExpense(Document):
 		if self.status == "Rejected" and not self.rejection_reason:
 			frappe.throw(_("Enter the rejection reason"))
 		if not self.is_new() and self.has_value_changed("status") and self.status != "Pending":
+			if self.owner == frappe.session.user and not ({"Fleet Manager", "System Manager"} & set(frappe.get_roles())):
+				frappe.throw(_("You cannot approve or reject an expense you entered yourself"), frappe.PermissionError)
 			self.reviewed_by = frappe.session.user
 
 	def on_update(self):

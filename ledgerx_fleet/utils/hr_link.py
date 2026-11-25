@@ -88,10 +88,15 @@ def create_incentives(from_date, to_date):
 				"ref_doctype": "Driver", "ref_docname": d.name, "payroll_date": to_date, "docstatus": ["<", 2]}):
 			continue
 		company = frappe.db.get_value("Employee", employee, "company")
-		doc = frappe.get_doc({"doctype": "Additional Salary", "employee": employee, "salary_component": component,
-			"amount": amount, "payroll_date": to_date, "company": company, "overwrite_salary_structure_amount": 1,
-			"ref_doctype": "Driver", "ref_docname": d.name}).insert(ignore_permissions=True)
-		made.append(doc.name)
+		try:
+			frappe.db.savepoint("lx_incentive")
+			doc = frappe.get_doc({"doctype": "Additional Salary", "employee": employee, "salary_component": component,
+				"amount": amount, "payroll_date": to_date, "company": company, "overwrite_salary_structure_amount": 1,
+				"ref_doctype": "Driver", "ref_docname": d.name}).insert(ignore_permissions=True)
+			made.append(doc.name)
+		except Exception:
+			frappe.db.rollback(save_point="lx_incentive")
+			frappe.log_error(title=f"Driver incentive failed for {d.name}")
 	return made
 
 

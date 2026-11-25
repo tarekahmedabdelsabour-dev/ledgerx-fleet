@@ -79,7 +79,7 @@ def ingest(speed_unit="kmh"):
 	max_speed = fleet.get_settings().max_speed_kmh or 0
 	devices = {}
 	stored = 0
-	unknown, rejected = set(), 0
+	unknown, rejected, duplicates = set(), 0, 0
 
 	for raw in items:
 		try:
@@ -106,6 +106,10 @@ def ingest(speed_unit="kmh"):
 			event = "Speeding"
 		elif p["ignition"] is not None and bool(p["ignition"]) != bool(dev.ignition_on):
 			event = "Ignition On" if p["ignition"] else "Ignition Off"
+
+		if frappe.db.exists("Fleet GPS Position", {"device": dev.name, "position_time": when}):
+			duplicates += 1  # the same fix sent again must not be stored twice or move the odometer
+			continue
 
 		doc = frappe.get_doc(
 			{
@@ -147,4 +151,4 @@ def ingest(speed_unit="kmh"):
 					fleet.update_vehicle_odometer(dev.vehicle, int(p["odometer"]))
 
 	frappe.db.commit()
-	return {"received": len(items), "stored": stored, "rejected": rejected, "unknown_devices": sorted(unknown)}
+	return {"received": len(items), "stored": stored, "rejected": rejected, "duplicates": duplicates, "unknown_devices": sorted(unknown)}
