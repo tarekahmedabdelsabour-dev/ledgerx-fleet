@@ -169,7 +169,7 @@ body{background:var(--bg,#f4f6f8)}
  function render(){
   $("hello").textContent="أهلاً "+ME.driver_name;
   var ic=$("inc");if(ME.incentive){ic.textContent="حافز الشهر: "+ME.incentive.km+" كم × "+ME.incentive.rate+" = "+ME.incentive.amount+" "+(ME.currency||"");ic.style.display="block"}else{ic.style.display="none"}
-  var sw=$("sw");if(ME.switch){sw.href=ME.switch.url;sw.textContent="⇄ "+ME.switch.label;sw.style.display="block"}else{sw.style.display="none"}
+  var sw=$("sw");if(ME.switch&&/^(\/|https?:\/\/)/.test(ME.switch.url||"")){sw.href=ME.switch.url;sw.textContent="⇄ "+ME.switch.label;sw.style.display="block"}else{sw.style.display="none"}
   var v=ME.vehicle_info;$("veh").textContent=v?("سيارتك: "+ME.vehicle+" - "+(v.make||"")+" "+(v.model||"")+" - آخر عداد "+(v.last_odometer||0)+" كم"):"لا توجد سيارة مسندة إليك حالياً";
   var c=ME.custody;$("bal").textContent=money(c.custody_balance);$("bal").className=c.custody_balance<0?"neg":"";
   $("owed").textContent=money(c.owed_to_driver);$("adv").textContent=money(c.advances-c.returns);$("spent").textContent=money(c.spent);
