@@ -140,4 +140,7 @@ def send_digest():
 		).insert(ignore_permissions=True)
 	recipients = fleet.alert_recipients()
 	if recipients:
-		frappe.sendmail(recipients=recipients, subject=subject, message=html, now=False)
+		try:
+			frappe.sendmail(recipients=recipients, subject=subject, message=html, now=False)
+		except frappe.OutgoingEmailError:
+			pass  # no outgoing email account is set up: the in-app alerts above are still delivered
